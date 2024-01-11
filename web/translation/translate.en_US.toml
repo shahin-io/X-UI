@@ -87,6 +87,7 @@
 "operationHours" = "Uptime"
 "operationHoursDesc" = "Time since startup"
 "systemLoad" = "System Load"
+"utilization" = "Utilization"
 "connectionTcpCountDesc" = "Total TCP connections across system"
 "connectionUdpCountDesc" = "Total UDP connections across system"
 "upSpeed" = "Overall Uplink speed across all networks"
@@ -101,7 +102,7 @@
 "backup" = "Backup & Restore"
 "backupTitle" = "Backup & Restore Database"
 "backupDescription" = "It is recommended to make a backup before importing a new database."
-"exportDatabase" = "Backup Database"
+"exportDatabase" = "Backup"
 "importDatabase" = "Restore"
 
 [pages.inbounds]
