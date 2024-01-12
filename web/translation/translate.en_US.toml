@@ -262,7 +262,7 @@
 "sessionMaxAgeDesc" = "The duration for which you can stay logged in. (unit: minute)"
 "expireTimeDiff" = "Expiration Date Threshold Notification"
 "expireTimeDiffDesc" = "Get notified about expiration date when reaching this threshold. (unit: day)"
-"trafficDiff" = "Traffic Limit Threshold Notification"
+"trafficDiff" = "Traffic Exhaustion Threshold Notification"
 "trafficDiffDesc" = "Get notified about traffic exhaustion when reaching this threshold. (unit: GB)"
 "tgNotifyCpu" = "CPU Load Threshold Notification"
 "tgNotifyCpuDesc" = "Get notified if CPU usage exceeds this threshold. (unit: %)"
