@@ -60,7 +60,7 @@
 "settings" = "PANEL SETTINGS"
 "xray" = "XRAY CONFIGS"
 "logout" = "LOG OUT"
-"link" = "Management"
+"link" = "Manage"
 
 [pages.login]
 "title" = "Welcome"
@@ -98,10 +98,10 @@
 "logs" = "Logs"
 "config" = "Config"
 "backup" = "Backup & Restore"
-"backupTitle" = "Backup & Restore Database"
-"backupDescription" = "It is recommended to make a backup before importing a new database."
-"exportDatabase" = "Backup Database"
-"importDatabase" = "Restore Database"
+"backupTitle" = "Database Backup & Restore"
+"backupDescription" = "It is recommended to make a backup before restoring a database."
+"exportDatabase" = "Back Up"
+"importDatabase" = "Restore"
 
 [pages.inbounds]
 "title" = "Inbounds"
@@ -259,7 +259,7 @@
 "sessionMaxAge" = "Session Duration"
 "sessionMaxAgeDesc" = "The duration for which you can stay logged in. (unit: minute)"
 "expireTimeDiff" = "Expiration Date Notification"
-"expireTimeDiffDesc" = ""Get notified about expiration date when reaching this threshold. (unit: day)"
+"expireTimeDiffDesc" = "Get notified about expiration date when reaching this threshold. (unit: day)"
 "trafficDiff" = "Traffic Cap Notification"
 "trafficDiffDesc" = "Get notified about traffic cap when reaching this threshold. (unit: GB)"
 "tgNotifyCpu" = "CPU Load Notification"
@@ -429,7 +429,7 @@
 "usage" = "❗️ Please provide a text to search!"
 "getID" = "🆔 Your ID: <code>{{ .ID }}</code>"
 "helpAdminCommands" = "Search for a client email:\r\n<code>/Usage [Email]</code>\r\n\r\nSearch for inbounds (with client stats):\r\n<code>/inbound [Remark]</code>"
-"helpClientCommands" = "To search for statistics, simply use the following command:\r\n\r\n<code>/Usage [UUID|Password]</code>\r\n\r\nUse UUID for VMess/VLESS & Password for Trojan/Shadowsocks."
+"helpClientCommands" = "To search for statistics, simply use the following command:\r\n\r\n<code>/Usage [UUID|Password]</code>\r\n\r\nUse UUID for VMess/VLESS and Password for Trojan/Shadowsocks."
 
 [tgbot.messages]
 "cpuThreshold" = "🔴 CPU load {{ .Percent }}% Exceeds the threshold of {{ .Threshold }}%"
