@@ -38,7 +38,7 @@ src="https://github.com/alireza0/x-ui/assets/115543613/dd4f10dd-8bb0-40cf-846f-1
 ## Install & Upgrade to Latest Version
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/shahin-io/x-ui/master/install.sh)
 ```
 
 ## Install Custom Version
@@ -46,7 +46,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.s
 **Step 1:** To install your desired version, add the version to the end of the installation command. e.g., ver `1.6.4`:
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh) 1.6.4
+bash <(curl -Ls https://raw.githubusercontent.com/shahin-io/x-ui/master/install.sh) 1.6.4
 ```
 
 ## Manual Install & Upgrade

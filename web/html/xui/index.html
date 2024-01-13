@@ -84,7 +84,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            X-UI <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="blue">{{ .cur_ver }}</a-tag></a>
+                            X-UI <a href="https://github.com/shahin-io/x-ui/releases" target="_blank"><a-tag color="blue">{{ .cur_ver }}</a-tag></a>
                             Xray
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                                 <a-tag color="blue" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
@@ -109,7 +109,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             {{ i18n "pages.index.xrayStatus" }}:
-                            <a-tag :color="status.xray.color">[[ status.xray.state ]]</a-tag>
+                            <a-tag :color="status.xray.color">[[ status.xray.state.toUpperCase() ]]</a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -139,7 +139,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            {{ i18n "usage"}}:
+                            {{ i18n "pages.index.utilization"}}:
                             RAM: [[ sizeFormat(status.appStats.mem) ]] -
                             Threads: [[ status.appStats.threads ]]
                             </a-tooltip>
@@ -462,8 +462,8 @@
                 }
 
                 if(message){
-                    if(message.startsWith("XRAY:"))
-                        message = "<b>XRAY: </b>" + message.substring(5);
+                    if(message.startsWith("Xray:"))
+                        message = "<b>Xray: </b>" + message.substring(5);
                     else
                         message = "<b>X-UI: </b>" + message;
                 }
