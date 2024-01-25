@@ -98,7 +98,7 @@
                             </template>
                                 <a-tag color="blue">IP Address</a-tag>
                               </a-tooltip>
-                            X-UI <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">{{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI{{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col>
@@ -138,7 +138,7 @@
                             <a-tag color="purple" style="cursor: pointer;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
