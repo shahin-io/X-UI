@@ -79,7 +79,7 @@
 "hard" = "Disk"
 "systemInfo" = "ماشین"
 "hostname" = "نام‌میزبان"
-"ipAddress" = "آدرس آی‌پی"
+"ipAddress" = "IP آدرس"
 "xrayStatus" = "‌Xray"
 "stopXray" = "توقف"
 "restartXray" = "ریستارت"
