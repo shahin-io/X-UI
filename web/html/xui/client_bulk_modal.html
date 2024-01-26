@@ -69,7 +69,7 @@
             </template>
                     <div style="position: relative;">
           <a-input-number v-model="clientsBulkModal.totalGB" :min="0" :placeholder="'Enter GB'"></a-input-number>
-                 <span style="position: absolute; top: 50%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;" v-if="clientsBulkModal.totalGB === 0">GB</span>
+                 <span style="position: absolute; top: 51%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;" v-if="clientsBulkModal.totalGB === 0">GB</span>
           </div>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
