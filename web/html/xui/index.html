@@ -84,12 +84,12 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            <strong>{{ i18n "pages.index.systemInfo" }}</strong>
+                            <strong>{{ i18n "pages.index.systemInfo" }}:</strong>
                             <a-tooltip>
                             <template slot="title">
                              [[ status.hostInfo.hostname ]]
                             </template>
-                            <a-tag color="blue">Host</a-tag>
+                            <a-tag color="blue">{{ i18n "pages.index.hostname" }}</a-tag>
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
@@ -123,7 +123,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.xrayStatus" }}</strong>
+                            <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
                             <a-tag :color="status.xray.color">[[ status.xray.state ]]</a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -144,7 +144,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "menu.link" }}</strong>
+                            <strong>{{ i18n "menu.link" }}:</strong>
                             <a-tag color="purple" style="cursor: pointer;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
@@ -152,7 +152,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.systemLoad" }}</strong> 
+                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
