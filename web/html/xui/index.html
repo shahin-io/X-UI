@@ -152,12 +152,15 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
+                            <strong>Stats:</strong> 
                             <a-tooltip>
                                 <template slot="title">
-                                    {{ i18n "pages.index.systemLoadDesc" }}
+                                    
                                     </template>
-                            <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            <a-tag color="blue">Load[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            <a-tag color="blue">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
+                            </a-tooltip>
                         </a-tooltip>
                         </a-card>
                     </a-col>
