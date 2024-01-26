@@ -105,19 +105,19 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.operationHours" }}:</strong>
-                            Xray
+                            
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue">[[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip> 
-                            OS
+                                <a-tag color="blue">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                            </a-tooltip>
+                             
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue">[[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -164,8 +164,8 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "usage"}}:</strong>
-                             RAM <a-tag color="blue">[[ sizeFormat(status.appStats.mem) ]]</a-tag>
-                             Threads <a-tag color="blue">[[ status.appStats.threads ]]</a-tag>
+                            <a-tag color="blue">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
