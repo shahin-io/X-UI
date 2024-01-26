@@ -79,6 +79,7 @@
 "hard" = "Disk"
 "systemInfo" = "Machine"
 "hostname" = "Hostname"
+"ipAddress" = "IP Address"
 "xrayStatus" = "Xray"
 "stopXray" = "Stop"
 "restartXray" = "Restart"
