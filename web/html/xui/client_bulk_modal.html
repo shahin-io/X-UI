@@ -64,10 +64,10 @@
                         <span>{{ i18n "pages.inbounds.meansNoLimit" }}</span>
                         {{ i18n "pages.inbounds.totalFlow" }}
                     </template>
-                    <a-icon type="question-circle"></a-icon>
+                    <a-icon type="info-circle"></a-icon>
                 </a-tooltip>
             </template>
-            <a-input-number v-model="clientsBulkModal.totalGB" :min="0"></a-input-number> GB
+            <a-input-number v-model="clientsBulkModal.totalGB" :placeholder="GB" :min="0"></a-input-number>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
             <a-switch v-model="clientsBulkModal.delayedStart" @click="clientsBulkModal.expiryTime=0"></a-switch>
