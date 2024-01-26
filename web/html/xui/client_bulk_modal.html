@@ -68,9 +68,9 @@ m{{define "clientsBulkModal"}}
                 </a-tooltip>
             </template>
                     <div style="position: relative;">
-          <a-input-number v-model="clientsBulkModal.totalGB" :min="0" :placeholder="'Total GB'"></a-input-number>
-                 <span v-if="clientsBulkModal.totalGB" style="position: absolute; top: 52%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;">GB</span>
-          </div>
+               <a-input-number v-model="clientsBulkModal.totalGB" :min="0" :placeholder="'Total GB'"></a-input-number>
+                  <span style="position: absolute; top: 52%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;">GB</span>
+             </div>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
             <a-switch v-model="clientsBulkModal.delayedStart" @click="clientsBulkModal.expiryTime=0"></a-switch>
