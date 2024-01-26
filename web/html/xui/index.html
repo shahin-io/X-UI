@@ -105,19 +105,19 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.operationHours" }}:</strong>
-                            
+                            Xray
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                               Xray <a-tag color="blue">[[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue">[[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip> 
-                            
+                            OS
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                OS <a-tag color="blue">[[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue">[[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
