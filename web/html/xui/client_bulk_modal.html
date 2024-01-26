@@ -67,9 +67,9 @@ m{{define "clientsBulkModal"}}
                     <a-icon type="question-circle"></a-icon>
                 </a-tooltip>
             </template>
-                <div style="position: relative; display: inline-flex; align-items: center;">
-  <a-input-number v-model="clientsBulkModal.totalGB" :min="0" style="padding-right: 20px;"></a-input-number>
-  <span style="position: absolute; top: 52%; right: 0; transform: translateY(-50%); color: #ccc; pointer-events: none;">GB</span>
+                <div style="position: relative;">
+  <a-input-number v-model="clientsBulkModal.totalGB" :min="0"></a-input-number>
+  <span style="position: absolute; top: 52%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;" v-if="clientsBulkModal.totalGB === 0">GB</span>
 </div>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
