@@ -1,4 +1,4 @@
-{{define "clientsBulkModal"}}
+m{{define "clientsBulkModal"}}
 <a-modal id="client-bulk-modal" v-model="clientsBulkModal.visible" :title="clientsBulkModal.title" @ok="clientsBulkModal.ok"
          :confirm-loading="clientsBulkModal.confirmLoading" :closable="true" :mask-closable="false"
          :ok-text="clientsBulkModal.okText" cancel-text='{{ i18n "close" }}' :class="themeSwitcher.currentTheme">
@@ -69,7 +69,7 @@
             </template>
                     <div style="position: relative;">
           <a-input-number v-model="clientsBulkModal.totalGB" :min="0" :placeholder="'Enter GB'"></a-input-number>
-                 <span style="position: absolute; top: 48%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;" v-if="clientsBulkModal.totalGB === 0">GB</span>
+                 <span style="position: absolute; top: 52%; left: 24px; transform: translateY(-50%); color: #ccc; pointer-events: none;" v-if="clientsBulkModal.totalGB === 0">GB</span>
           </div>
         </a-form-item>
         <a-form-item label='{{ i18n "pages.client.delayedStart" }}'>
