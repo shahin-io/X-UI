@@ -966,10 +966,7 @@
                     title: '{{ i18n "pages.inbounds.deleteInbound"}}' + ' #' + dbInboundId,
                     content: '{{ i18n "pages.inbounds.deleteInboundContent"}}',
                     class: themeSwitcher.currentTheme,
-                    okText: '{{ i18n "delete"}}',
-                    okButtonProps: {
-                      type: 'danger',
-                    },
+                    okText: '<span style="color: red;">{{ i18n "delete" }}</span>',
                     cancelText: '{{ i18n "cancel"}}',
                     onOk: () => this.submit('/xui/inbound/del/' + dbInboundId),
                 });
