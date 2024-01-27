@@ -197,7 +197,7 @@
                                     <a-menu slot="overlay" @click="a => clickAction(a, dbInbound)" :theme="themeSwitcher.currentTheme">
                                         <a-menu-item key="edit">
                                             <a-icon type="edit"></a-icon>
-                                            {{ i18n "edit" }}
+                                            {{ i18n "pages.inbounds.modifyInbound" }}
                                         </a-menu-item>
                                         <a-menu-item key="qrcode" v-if="dbInbound.isSS && !dbInbound.toInbound().isSSMultiUser">
                                             <a-icon type="qrcode"></a-icon>
