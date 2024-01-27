@@ -404,7 +404,7 @@
 "portal" = "پورتال"
 "intercon" = "اتصال میانی"
 "settings" = "تنظیمات"
-"accountInfo" = "اطلاعات حساب کاربری"
+"accountInfo" = "اطلاعات حساب"
 "outboundStatus" = "وضعیت خروجی"
 
 [pages.xray.wireguard]
