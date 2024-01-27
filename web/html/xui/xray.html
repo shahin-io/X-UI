@@ -224,7 +224,7 @@
                                         <setting-list-item type="switch" title='{{ i18n "pages.xray.NetflixWARP"}}' desc='{{ i18n "pages.xray.NetflixWARPDesc"}}' v-model="NetflixWARPSettings"></setting-list-item>
                                         <setting-list-item type="switch" title='{{ i18n "pages.xray.SpotifyWARP"}}' desc='{{ i18n "pages.xray.SpotifyWARPDesc"}}' v-model="SpotifyWARPSettings"></setting-list-item>
                                     </template>
-                                    <a-button v-else style="margin: 10px 0;" @click="showWarp">WARP {{ i18n "pages.xray.rules.outbound" }}</a-button>
+                                    <a-button type="primary" icon="cloud" v-else style="margin: 10px 0;" @click="showWarp">WARP</a-button>
                                 </a-collapse-panel>
                                 <a-collapse-panel header='{{ i18n "pages.settings.resetDefaultConfig"}}'>
                                     <a-space direction="horizontal" style="padding: 0 20px">
