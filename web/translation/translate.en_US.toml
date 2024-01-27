@@ -127,7 +127,7 @@
 "generalActions" = "General Actions"
 "create" = "Create"
 "update" = "Update"
-"modifyInbound" = "Modify Inbound"
+"modifyInbound" = "Edit Inbound"
 "deleteInbound" = "Delete Inbound"
 "deleteInboundContent" = "Are you sure you want to delete inbound?"
 "deleteClient" = "Delete Client"
