@@ -967,9 +967,7 @@
                     content: '{{ i18n "pages.inbounds.deleteInboundContent"}}',
                     class: themeSwitcher.currentTheme,
                     okText: '{{ i18n "delete" }}',
-                    buttonProps: {
-                    class: 'danger-button',
-                    },
+                    buttonProps: { class: 'danger-button'},
                     cancelText: '{{ i18n "cancel"}}',
                     onOk: () => this.submit('/xui/inbound/del/' + dbInboundId),
                 });
