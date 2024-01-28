@@ -1,5 +1,5 @@
 {{define "warpModal"}}
-<a-modal id="warp-modal" v-model="warpModal.visible" title="WARP Outbound"
+<a-modal id="warp-modal" v-model="warpModal.visible" title="Cloudflare WARP"
          :confirm-loading="warpModal.confirmLoading" :closable="true" :mask-closable="true"
          :footer="null" :class="themeSwitcher.currentTheme">
     <template v-if="ObjectUtil.isEmpty(warpModal.warpData)">
