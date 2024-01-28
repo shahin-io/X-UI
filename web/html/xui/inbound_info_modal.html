@@ -10,20 +10,20 @@
     <a-row>
         <a-col :xs="24" :md="12">
             <table>
-                <tr><td>{{ i18n "protocol" }}</td><td><a-tag color="purple">[[ dbInbound.protocol ]]</a-tag></td></tr>
-                <tr><td>{{ i18n "pages.inbounds.address" }}</td><td>
+                <tr><td>{{ i18n "protocol" }}:</td><td> <a-tag color="purple">[[ dbInbound.protocol ]]</a-tag></td></tr>
+                <tr><td>{{ i18n "pages.inbounds.address" }}:</td><td>
                     <a-tooltip :title="[[ dbInbound.address ]]">
                         <a-tag class="info-large-tag">[[ dbInbound.address ]]</a-tag>
                     </a-tooltip>
                 </td></tr>
-                <tr><td>{{ i18n "pages.inbounds.port" }}</td><td><a-tag>[[ dbInbound.port ]]</a-tag></td></tr>
+                <tr><td>{{ i18n "pages.inbounds.port" }}:</td><td><a-tag>[[ dbInbound.port ]]</a-tag></td></tr>
             </table>
         </a-col>
         <a-col :xs="24" :md="12">
         <template v-if="dbInbound.isVMess || dbInbound.isVLess || dbInbound.isTrojan || dbInbound.isSS">
             <table>
                 <tr>
-                    <td>{{ i18n "transmission" }}</td><td><a-tag color="blue">[[ inbound.network ]]</a-tag></td>
+                    <td>{{ i18n "transmission" }}:</td><td><a-tag color="blue">[[ inbound.network ]]</a-tag></td>
                 </tr>
             <template v-if="inbound.isTcp || inbound.isWs || inbound.isH2">
                 <tr>
@@ -36,7 +36,7 @@
                     <td v-else><a-tag color="orange">{{ i18n "none" }}</a-tag></td></tr>
                 </tr>
                 <tr>
-                    <td>{{ i18n "path" }}</td>
+                    <td>{{ i18n "path" }}:</td>
                     <td v-if="inbound.path">
                         <a-tooltip :title="[[ inbound.path ]]">
                             <a-tag class="info-large-tag">[[ inbound.path ]]</a-tag>
@@ -57,11 +57,11 @@
             </template>
             
             <template v-if="inbound.isGrpc">
-                <tr><td>grpc serviceName</td><td>
+                <tr><td>Service Name</td><td>
                     <a-tooltip :title="[[ inbound.serviceName ]]">
                         <a-tag class="info-large-tag">[[ inbound.serviceName ]]</a-tag>
                     </a-tooltip>
-                <tr><td>grpc multiMode</td><td><a-tag>[[ inbound.stream.grpc.multiMode ]]</a-tag></td></tr>
+                <tr><td>Multi Mode</td><td><a-tag>[[ inbound.stream.grpc.multiMode ]]</a-tag></td></tr>
             </template>
             </table>
         </template>
@@ -226,10 +226,10 @@
                 <td><a-tag color="blue">[[ inbound.settings.followRedirect ]]</a-tag></td>
             </tr>
         </table>
-        <table v-if="dbInbound.isSocks" style="margin-bottom: 10px; width: 100%;">
+        <table v-if="dbInbound.isSocks" style="margin-bottom: 10px; width: 100%; text-align: center;">
             <tr>
-                <th>{{ i18n "password" }} Auth</th>
-                <th>{{ i18n "pages.inbounds.enable" }} udp</th>
+                <th>Auth</th>
+                <th>UDP</th>
                 <th>IP</th>
             </tr>
             <tr>
@@ -249,7 +249,7 @@
             </tr>
             </template>
         </table>
-        <table v-if="dbInbound.isHTTP" style="margin-bottom: 10px; width: 100%;">
+        <table v-if="dbInbound.isHTTP" style="margin-bottom: 10px; width: 100%; text-align: center;">
             <tr>
                 <th> </th>
                 <th>{{ i18n "username" }}</th>
