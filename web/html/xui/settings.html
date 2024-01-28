@@ -55,7 +55,7 @@
                 <a-space direction="vertical">
                     <a-card hoverable style="margin-bottom: .5rem;">
                         <a-row>
-                         <a-col :xs="24" :sm="8" style="padding: 4px;">
+                            <a-col :xs="24" :sm="8" style="padding: 4px;">
                                 <a-space direction="horizontal">
                                     <a-button type="primary" :disabled="saveBtnDisable" @click="updateAllSetting">{{ i18n "pages.settings.save" }}</a-button>
                                     <a-button type="danger" :disabled="!saveBtnDisable" @click="restartPanel">{{ i18n "pages.settings.restartPanel" }}</a-button>
@@ -74,9 +74,10 @@
                                 </template>
                             </a-col>
                         </a-row>
+                    </a-card>
                     <a-tabs default-active-key="1">
-                            <a-tab-pane key="1" tab='{{ i18n "pages.settings.panelConfig"}}'>
-                             <a-list item-layout="horizontal">
+                        <a-tab-pane key="1" tab='{{ i18n "pages.settings.panelConfig"}}'>
+                            <a-list item-layout="horizontal">
                                 <a-list-item>
                                     <a-row style="padding: 20px">
                                         <a-col :lg="24" :xl="12">
