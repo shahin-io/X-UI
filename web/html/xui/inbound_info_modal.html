@@ -71,7 +71,7 @@
             <a-tag :color="inbound.stream.security == 'none' ? 'red' : 'green'">[[ inbound.stream.security ]]</a-tag>
             <br />
             <template v-if="inbound.stream.security != 'none'">
-            {{ i18n "domainName" }}:
+            SNI:
             <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : '' ]]</a-tag>
             </template>
         </template>
@@ -92,7 +92,7 @@
         </tr>
     </table>
     <template v-if="infoModal.clientSettings">
-        <a-divider>{{ i18n "pages.inbounds.client" }}:</a-divider>
+        <a-divider>{{ i18n "pages.inbounds.client" }}</a-divider>
         <table style="margin-bottom: 10px;">
             <tr>
                 <td>{{ i18n "pages.inbounds.email" }}:</td>
@@ -141,6 +141,7 @@
                     <a-tag v-if="infoModal.clientStats && infoModal.clientSettings.totalGB > 0" :color="statsColor(infoModal.clientStats)">
                         [[ sizeFormat(infoModal.clientSettings.totalGB - infoModal.clientStats.up - infoModal.clientStats.down) ]]
                     </a-tag>
+                    <a-tag v-else color="purple" class="infinite-tag">&infin;</a-tag>
                 </td>
                 <td>
                     <a-tag v-if="infoModal.clientSettings.totalGB > 0" :color="statsColor(infoModal.clientStats)">
