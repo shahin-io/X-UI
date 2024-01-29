@@ -80,7 +80,7 @@
 "systemInfo" = "ماشین"
 "hostname" = "نام میزبان"
 "ipAddress" = "IPv4/v6"
-"xrayStatus" = "‌Xray"
+"xrayStatus" = "‌Xrayنمای"
 "stopXray" = "توقف"
 "restartXray" = "ریستارت"
 "xraySwitch" = "تغییر‌ نسخه ایکس‌ری"
