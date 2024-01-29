@@ -81,18 +81,16 @@
                 </a-row>
             </transition>
             <transition name="list" appear>
+                <a-row>
                 <a-col :sm="24" :md="12">
-                       <a-row>
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.operationHours" }}:</strong>
-                            
+                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
                                 <a-tag color="blue">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>
-                             
+                            </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
