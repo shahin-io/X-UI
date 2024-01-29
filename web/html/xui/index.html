@@ -177,30 +177,6 @@
                         <a-card hoverable>
                             <a-row>
                                 <a-col :span="12">
-                                    <a-icon type="swap"></a-icon>    
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.connectionTcpCountDesc" }}
-                                        </template>
-                                        <strong>TCP:</Strong>  [[ status.tcpCount ]]
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="swap"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.connectionUdpCountDesc" }}
-                                        </template>
-                                        <strong>UDP:</strong>  [[ status.udpCount ]]
-                                    </a-tooltip>
-                                </a-col>
-                            </a-row>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
                                     <a-icon type="arrow-up"></a-icon>
                                     <a-tooltip>
                                         <template slot="title">
@@ -216,6 +192,30 @@
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
                                         <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
+                                    </a-tooltip>
+                                </a-col>
+                            </a-row>
+                        </a-card>
+                    </a-col>
+                    <a-col :sm="24" :md="12">
+                        <a-card hoverable>
+                            <a-row>
+                                <a-col :span="12">
+                                    <a-icon type="swap"></a-icon>    
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.connectionTcpCountDesc" }}
+                                        </template>
+                                        <strong>TCP:</Strong>  [[ status.tcpCount ]]
+                                    </a-tooltip>
+                                </a-col>
+                                <a-col :span="12">
+                                    <a-icon type="swap"></a-icon>
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.connectionUdpCountDesc" }}
+                                        </template>
+                                        <strong>UDP:</strong>  [[ status.udpCount ]]
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
