@@ -167,32 +167,8 @@
                                 <template slot="title">
                                    Threads
                                     </template>
-                              <a-tag color="blue" style="margin-right: 2px;">[[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue">[[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
-                                    <a-icon type="arrow-up"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.upSpeed" }}
-                                        </template>
-                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="arrow-down"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.downSpeed" }}
-                                        </template>
-                                        <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
-                                    </a-tooltip>
-                                </a-col>
-                            </a-row>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
@@ -214,6 +190,30 @@
                                             {{ i18n "pages.index.connectionUdpCountDesc" }}
                                         </template>
                                         <strong>UDP:</strong>  [[ status.udpCount ]]
+                                    </a-tooltip>
+                                </a-col>
+                            </a-row>
+                        </a-card>
+                    </a-col>
+                    <a-col :sm="24" :md="12">
+                        <a-card hoverable>
+                            <a-row>
+                                <a-col :span="12">
+                                    <a-icon type="arrow-up"></a-icon>
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.upSpeed" }}
+                                        </template>
+                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
+                                    </a-tooltip>
+                                </a-col>
+                                <a-col :span="12">
+                                    <a-icon type="arrow-down"></a-icon>
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.downSpeed" }}
+                                        </template>
+                                        <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
