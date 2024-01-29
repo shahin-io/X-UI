@@ -109,7 +109,7 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
@@ -163,7 +163,7 @@
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                               <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
