@@ -80,7 +80,7 @@
 "systemInfo" = "Machine"
 "hostname" = "Hostname"
 "ipAddress" = "IPv4/v6"
-"xrayStatus" = "Xray"
+"xrayStatus" = "Xray Status"
 "stopXray" = "Stop"
 "restartXray" = "Restart"
 "xraySwitch" = "Change Xray Version"
