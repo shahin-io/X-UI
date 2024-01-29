@@ -82,23 +82,6 @@
             </transition>
             <transition name="list" appear>
                 <a-row>
-                <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
-                            <a-tooltip>
-                                 <template slot="title">
-                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
-                                 </template>
-                                <a-tag color="blue">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>      
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.operationHoursDesc" }}
-                                </template>
-                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
-                            </a-tooltip>
-                        </a-card>
-                    </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
                             <strong>{{ i18n "pages.index.systemInfo" }}:</strong>
@@ -117,6 +100,23 @@
                               </a-tooltip>
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
+                        </a-card>
+                    </a-col>
+                    <a-col :sm="24" :md="12">
+                        <a-card hoverable>
+                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
+                            <a-tooltip>
+                                 <template slot="title">
+                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
+                                 </template>
+                                <a-tag color="blue">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                            </a-tooltip>      
+                            <a-tooltip>
+                                <template slot="title">
+                                    {{ i18n "pages.index.operationHoursDesc" }}
+                                </template>
+                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
+                            </a-tooltip>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
@@ -150,24 +150,23 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "usage" }}:</strong>
+                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
                                     </template>
-                              <a-tag color="blue" style="margin-right: 2px;">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                        </a-tooltip>
+                        </a-card>
+                    </a-col>
+                    <a-col :sm="24" :md="12">
+                        <a-card hoverable>
+                            <strong>{{ i18n "usage" }}:</strong>
+                            <a-tooltip>
+                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                                <template slot="title">
-                                   RAM
-                                    </template>
-                            <a-tag color="blue" style="margin-right: 2px;">[[ sizeFormat(status.appStats.mem) ]]</a-tag>
-                            </a-tooltip>
-                            <a-tooltip>
-                                <template slot="title">
-                                   Threads
-                                    </template>
-                              <a-tag color="blue">[[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
