@@ -124,7 +124,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
-                            <a-tag :style="{ backgroundColor: status.xray.color, color: 'white' }"><strong>[[ status.xray.state.toUpperCase() ]]</strong></a-tag>
+                            <a-tag :style="{ backgroundColor: status.xray.color, color: 'white', marginRight: '2px' }"><strong>[[ status.xray.state.toUpperCase() ]]</strong></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -135,8 +135,8 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-tag color="purple" style="cursor: pointer;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                                 <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
