@@ -206,7 +206,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.upSpeed" }}
                                         </template>
-                                        [[ sizeFormat(status.netIO.up) ]]/s
+                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -215,7 +215,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
-                                        [[ sizeFormat(status.netIO.down) ]]/s
+                                        <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -230,7 +230,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalSent" }}
                                         </template>
-                                        [[ sizeFormat(status.netTraffic.sent) ]]
+                                        <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -239,7 +239,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalReceive" }}
                                         </template>
-                                        [[ sizeFormat(status.netTraffic.recv) ]]
+                                       <strong>In:</strong> [[ sizeFormat(status.netTraffic.recv) ]]
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
