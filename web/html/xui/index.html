@@ -198,6 +198,27 @@
                         <a-card hoverable>
                             <a-row>
                                 <a-col :span="12">
+                                    <a-icon type="cloud-upload"></a-icon>
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.totalSent" }}
+                                        </template>
+                                        <strong>Out:</strong>[[ sizeFormat(status.netTraffic.sent) ]]
+                                    </a-tooltip>
+                                </a-col>
+                                <a-col :span="12">
+                                    <a-icon type="cloud-download"></a-icon>
+                                    <a-tooltip>
+                                        <template slot="title">
+                                            {{ i18n "pages.index.totalReceive" }}
+                                        </template>
+                                       <strong>In:</strong>[[ sizeFormat(status.netTraffic.recv) ]]
+                                    </a-tooltip>
+                                </a-col>
+                                <a-col :sm="24" :md="12">
+                        <a-card hoverable>
+                            <a-row>
+                                <a-col :span="12">
                                     <a-icon type="arrow-up"></a-icon>
                                     <a-tooltip>
                                         <template slot="title">
@@ -218,27 +239,6 @@
                             </a-row>
                         </a-card>
                     </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
-                                    <a-icon type="cloud-upload"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.totalSent" }}
-                                        </template>
-                                        [[ sizeFormat(status.netTraffic.sent) ]]
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="cloud-download"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.totalReceive" }}
-                                        </template>
-                                       [[ sizeFormat(status.netTraffic.recv) ]]
-                                    </a-tooltip>
-                                </a-col>
                             </a-row>
                         </a-card>
                     </a-col>
