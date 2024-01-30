@@ -136,7 +136,7 @@
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
@@ -203,7 +203,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.upSpeed" }}
                                         </template>
-                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
+                                        [[ sizeFormat(status.netIO.up) ]]/s
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -212,7 +212,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
-                                       <strong>Dn:</strong> [[ sizeFormat(status.netIO.down) ]]/s
+                                       [[ sizeFormat(status.netIO.down) ]]/s
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -227,7 +227,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalSent" }}
                                         </template>
-                                        <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
+                                        [[ sizeFormat(status.netTraffic.sent) ]]
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -236,7 +236,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalReceive" }}
                                         </template>
-                                       <strong>In:</strong> [[ sizeFormat(status.netTraffic.recv) ]]
+                                       [[ sizeFormat(status.netTraffic.recv) ]]
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
