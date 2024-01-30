@@ -24,7 +24,7 @@
         </a-popconfirm>
     </a-tooltip>
     <a-tooltip>
-        <template slot="title"><span style="color: #FF4D4F"> {{ i18n "pages.inbounds.deleteClient" }}</span></template>
+        <template slot="title"><span style="color: #FF4D4F">{{ i18n "pages.inbounds.deleteClient" }}</span></template>
         <a-popconfirm @confirm="delClient(record.id,client,false)"
             title='{{ i18n "pages.inbounds.deleteClientContent"}}'
             :overlay-class-name="themeSwitcher.currentTheme"
