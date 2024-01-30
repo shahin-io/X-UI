@@ -84,7 +84,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            <strong>{{ i18n "pages.index.systemInfo" }}:</strong>
+                            <strong>{{ i18n "pages.index.machineInfo" }}:</strong>
                             <a-tooltip>
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
@@ -96,7 +96,7 @@
                                 <template slot="title">
                                   IPv4:<br>[[ status.hostInfo.ipv4 ]]<br>IPv6:<br>[[ status.hostInfo.ipv6 ]]
                             </template>
-                                <a-tag color="blue" style="margin-right: 3px;">{{ i18n "pages.index.ipAddress" }}</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
