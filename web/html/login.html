@@ -121,7 +121,7 @@
                             <a-row justify="center" class="centered">
                                 <a-button type="primary" :loading="loading" @click="login" :icon="loading ? 'poweroff' : undefined"
                                           :style="loading ? { width: '50px' } : { display: 'inline-block', width: '100%' }">
-                                    [[ loading ? '' : '{{ i18n "login" }}' ]]
+                                    [[ loading ? '' : '<span style="font-weight: bold;">{{ i18n "login" }}</span>' ]]
                                 </a-button>
                             </a-row>
                         </a-form-item>
