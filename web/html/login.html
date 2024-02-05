@@ -122,7 +122,7 @@
                         <a-button type="primary"
             :loading="loading"
             @click="login"
-            :icon="loading ? 'poweroff' : login"
+            :icon="loading ? 'poweroff' : 'login'"
             :style="{ fontWeight: 'bold', width: '100%', display: 'inline-block' }">
     <span v-if="!loading">{{ i18n "login" }}</span>
 </a-button>
