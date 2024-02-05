@@ -85,6 +85,13 @@
   .ant-form-item {
     margin-bottom: 16px;
   }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 </style>
 <body>
 <a-layout id="app" v-cloak :class="themeSwitcher.currentTheme">
@@ -119,13 +126,19 @@
                         </a-form-item>
                         <a-form-item>
                             <a-row justify="center" class="centered">
-                        <a-button type="primary"
-            :loading="loading"
-            @click="login"
-            :icon="loading ? 'poweroff' : 'login'"
-            :style="{ fontWeight: 'bold', width: '100%', display: 'inline-block' }">
-    <span v-if="!loading">{{ i18n "login" }}</span>
-</a-button>
+                       <template>
+  <a-button
+    type="primary"
+    :loading="loading"
+    @click="login"
+    :icon="loading ? 'poweroff' : 'login'"
+    :style="{ fontWeight: 'bold', width: '100%', display: 'inline-block' }"
+  >
+    <transition name="fade">
+      <span v-if="!loading">{{ i18n "login" }}</span>
+    </transition>
+  </a-button>
+</template>
                             </a-row>
                         </a-form-item>
                         <a-form-item>
