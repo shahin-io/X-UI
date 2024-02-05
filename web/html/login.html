@@ -119,9 +119,8 @@
                         </a-form-item>
                         <a-form-item>
                             <a-row justify="center" class="centered">
-                       <template>
- <a-button type="primary"
-          :loading="loading"
+                        <a-button type="primary"
+                        :loading="loading"
           @click="login"
           :icon="loading ? 'poweroff' : 'login'"
           :style="{ fontWeight: 'bold', width: loading ? '50px' : '100%', display: 'inline-block' }">
