@@ -132,7 +132,7 @@
     :loading="loading"
     @click="login"
     :icon="loading ? 'poweroff' : 'login'"
-    :style="{ fontWeight: 'bold', width: '100%', display: 'inline-block' }"
+    :style="{ fontWeight: 'bold', width: loading ? '50px' : '100%', display: 'inline-block' }"
   >
     <transition name="fade">
       <span v-if="!loading">{{ i18n "login" }}</span>
