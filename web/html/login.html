@@ -119,10 +119,15 @@
                         </a-form-item>
                         <a-form-item>
                             <a-row justify="center" class="centered">
-                             <a-button type="primary" :loading="loading" @click="login" :icon="loading ? 'poweroff' : undefined"
-                            :style="loading ? { width: '50px' } : { display: 'inline-block', width: '100%', fontWeight: 'bold' }">
-                                <template v-if="!loading">{{ i18n "login" }}</template>
-                            </a-button>
+   <template>
+  <a-button type="primary"
+            :loading="loading"
+            @click="login"
+            :icon="loading ? 'poweroff' : undefined"
+            style="width: 100%; display: inline-block; font-weight: bold;">
+    {{ i18n "login" }}
+  </a-button>
+</template>
                             </a-row>
                         </a-form-item>
                         <a-form-item>
