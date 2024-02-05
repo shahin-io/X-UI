@@ -86,7 +86,7 @@
     margin-bottom: 16px;
   }
   .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.75s;
+  transition: opacity 1.0s;
 }
 
 .fade-enter, .fade-leave-to {
@@ -132,7 +132,7 @@
     :loading="loading"
     @click="login"
     :icon="loading ? 'poweroff' : 'login'"
-    :style="{ fontWeight: 'bold', width: loading ? '50px' : '100%', display: 'inline-block' }"
+    :style="{ fontWeight: 'bold', width: loading ? '25px' : '100%', display: 'inline-block' }"
   >
     <transition name="fade">
       <span v-if="!loading">{{ i18n "login" }}</span>
