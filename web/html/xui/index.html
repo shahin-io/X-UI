@@ -98,7 +98,7 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><strong>X-UI</strong> v{{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col>
@@ -109,13 +109,13 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue" style="margin-right: 3px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue"><strong>OS</strong> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -136,7 +136,7 @@
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
