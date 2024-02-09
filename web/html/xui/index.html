@@ -400,16 +400,16 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = '#3dbd7d';      //iOS Green
+                    this.xray.color = "green";      //iOS Green
                     break;
                 case State.Stop:
-                    this.xray.color = '#FF8733';      //BurgerKing Orange
+                    this.xray.color = "orange";      //BurgerKing Orange
                     break;
                 case State.Error:
-                    this.xray.color = '#D92906';      //NASA Red
+                    this.xray.color = "red";      //NASA Red
                     break;
                 default:
-                    this.xray.color = '#A2AAAD';      //Apple Gray
+                    this.xray.color = "gray";      //Apple Gray
             }
         }
     }
