@@ -109,13 +109,13 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue"><strong>OS</strong> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -163,10 +163,10 @@
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 3px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
