@@ -746,7 +746,7 @@ Outbound.VmessSettings = class extends CommonClass {
             json.vnext[0].address,
             json.vnext[0].port,
             json.vnext[0].users[0].id,
-            json.vnext[0].security,
+            json.vnext[0].users[0].security,
         );
     }
 
@@ -755,7 +755,7 @@ Outbound.VmessSettings = class extends CommonClass {
             vnext: [{
                 address: this.address,
                 port: this.port,
-                users: [{id: this.id}],
+                users: [{id: this.id security: this.security,}],
             }],
         };
     }
