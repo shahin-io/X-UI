@@ -540,7 +540,7 @@ class Outbound extends CommonClass {
     static fromParamLink(link){
         const url = new URL(link);
         let type = url.searchParams.get('type');
-        let security = url.searchParams.get('security') ?? 'none';
+        let security = url.searchParams.get('security') ?? 'auto';
         let stream = new StreamSettings(type, security);
 
         let headerType = url.searchParams.get('headerType');
