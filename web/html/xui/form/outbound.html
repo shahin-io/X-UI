@@ -169,7 +169,8 @@
 <!-- Vnext (vless/vmess) settings -->
 <template v-if="[Protocols.VMess, Protocols.VLESS].includes(outbound.protocol)">
         <a-form-item label='ID'>
-            <a-input v-if="outbound.protocol === Protocols.VMess"></a-input>
+        </a-form-item>
+        <a-input v-if="outbound.protocol === Protocols.VMess"></a-input>
         </a-form-item>
         <a-form-item label='{{ i18n "encryption" }}'>
             <a-select v-model="outbound.settings.security" :dropdown-class-name="themeSwitcher.currentTheme">
@@ -178,7 +179,6 @@
                 <a-select-option value="aes-128-gcm">AES-128-GCM</a-select-option>
                 <a-select-option value="chacha20-poly1305">CHACHA20-POLY1305</a-select-option>
             </a-select>
-        </a-form-item>
     <!-- vless settings -->
     <template v-if="outbound.canEnableTlsFlow()">
         <a-form-item label='Flow'>
