@@ -732,11 +732,12 @@ Outbound.DNSSettings = class extends CommonClass {
     }
 };
 Outbound.VmessSettings = class extends CommonClass {
-    constructor(address, port, id) {
+    constructor(address, port, id, security) {
         super();
         this.address = address;
         this.port = port;
         this.id = id;
+        this.id = security
     }
 
     static fromJson(json={}) {
@@ -745,6 +746,7 @@ Outbound.VmessSettings = class extends CommonClass {
             json.vnext[0].address,
             json.vnext[0].port,
             json.vnext[0].users[0].id,
+            json.vnext[0].security,
         );
     }
 
