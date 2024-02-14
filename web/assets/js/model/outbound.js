@@ -534,7 +534,7 @@ class Outbound extends CommonClass {
         }
 
 
-        return new Outbound(json.ps, Protocols.VMess, new Outbound.VmessSettings(json.add, json.port, json.id, json.security), stream);
+        return new Outbound(json.ps, Protocols.VMess, new Outbound.VmessSettings(json.add, json.port, json.id), stream);
     }
 
     static fromParamLink(link){
