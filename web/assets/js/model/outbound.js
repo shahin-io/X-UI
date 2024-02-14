@@ -732,7 +732,7 @@ Outbound.DNSSettings = class extends CommonClass {
     }
 };
 Outbound.VmessSettings = class extends CommonClass {
-    constructor(address, port, id, security) {
+    constructor(address, port, id, security='auto') {
         super();
         this.address = address;
         this.port = port;
@@ -755,7 +755,7 @@ Outbound.VmessSettings = class extends CommonClass {
             vnext: [{
                 address: this.address,
                 port: this.port,
-                users: [{id: this.id security: this.security,}],
+                users: [{id: this.id, security: 'auto',}],
             }],
         };
     }
