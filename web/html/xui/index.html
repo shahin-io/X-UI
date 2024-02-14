@@ -117,7 +117,7 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="green" style="margin-right: 3px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="green" style="margin-right: 4px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
@@ -130,7 +130,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
-                            <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
+                            <a-tag :color="status.xray.color" style="margin-right: 3px;">[[ status.xray.state ]]</a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -141,8 +141,8 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                                 <a-tag color="blue" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>
@@ -155,8 +155,8 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "menu.link" }}:</strong>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="#0d49b4" style="cursor: pointer; color: white;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
@@ -175,7 +175,7 @@
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 4px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                               <a-tag color="blue"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
