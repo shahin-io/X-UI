@@ -102,7 +102,7 @@
                                 <template slot="title">
                                  <a-icon type="github"></a-icon>
                                 </template>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><strong>X-UI</strong> {{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="blue"><strong>X-UI</strong> {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col>
@@ -130,17 +130,17 @@
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
-                                    <a-tag color="purple" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                                    <a-tag color="#0d49b4" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                                 </span>
                                 <template slot="content">
                                     <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
+                                <a-tag color="blue" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                                  <template slot="title">
@@ -151,9 +151,9 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "menu.link" }}:</strong>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px; font-size: inherit; padding: 0 10px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-button>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px; font-size: inherit; padding: 0 10px;" @click="openConfig()">{{ i18n "pages.index.config" }}</a-button>
-                            <a-button type="primary" style="cursor: pointer; font-size: inherit; padding: 0 10px;" @click="openBackup()">{{ i18n "pages.index.backup" }}</a-button>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
