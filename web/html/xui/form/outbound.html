@@ -169,8 +169,7 @@
 <!-- Vnext (vless/vmess) settings -->
 <template v-if="[Protocols.VMess, Protocols.VLESS].includes(outbound.protocol)">
         <a-form-item label='ID'>
-        </a-form-item>
-        <a-input v-if="outbound.protocol === Protocols.VMess"></a-input>
+            <a-input v-model.trim="outbound.settings.id"></a-input>
         </a-form-item>
     <!-- vless settings -->
     <template v-if="outbound.canEnableTlsFlow()">
