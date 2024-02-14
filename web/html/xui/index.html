@@ -141,8 +141,8 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 2px; color: white;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                                 <a-tag color="blue" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>
@@ -155,9 +155,9 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "menu.link" }}:</strong>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
-                            <a-tag color="#0d49b4" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; margin-right: 3px; color: white;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
+                            <a-tag color="#0d49b4" style="cursor: pointer; color: white;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
