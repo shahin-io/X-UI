@@ -172,13 +172,6 @@
         </a-form-item>
         <a-input v-if="outbound.protocol === Protocols.VMess"></a-input>
         </a-form-item>
-        <a-form-item label='{{ i18n "encryption" }}'>
-            <a-select v-model="outbound.settings.security" :dropdown-class-name="themeSwitcher.currentTheme">
-                <a-select-option value="none">None</a-select-option>
-                 <a-select-option value="auto">Auto</a-select-option>
-                <a-select-option value="aes-128-gcm">AES-128-GCM</a-select-option>
-                <a-select-option value="chacha20-poly1305">CHACHA20-POLY1305</a-select-option>
-            </a-select>
     <!-- vless settings -->
     <template v-if="outbound.canEnableTlsFlow()">
         <a-form-item label='Flow'>
