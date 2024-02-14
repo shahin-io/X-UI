@@ -102,8 +102,6 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue" style="margin-right: 2px;"><strong>OS</strong> [[ formatSecond(status.uptime) ]]</a-tag>
-                            </a-tooltip>
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
@@ -147,9 +145,7 @@
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
-                                 </template>
-                                <a-tag color="blue" style="margin-right: 2px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>                   
+                                 </template>                  
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
