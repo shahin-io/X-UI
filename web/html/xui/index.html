@@ -89,15 +89,21 @@
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
                             </template>
-                            <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 2px;">[[ status.hostInfo.hostname ]]</a-tag>
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
                                 <template slot="title">
                                   IPv4:<br>[[ status.hostInfo.ipv4 ]]<br>IPv6:<br>[[ status.hostInfo.ipv6 ]]
                             </template>
-                                <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
+                                <a-tag color="blue" style="margin-right: 2px;">IPv4/v6</a-tag>
                               </a-tooltip>
+                            <a-tooltip>
+                                <template slot="title">
+                                    {{ i18n "pages.index.operationHoursDesc" }}
+                                </template>
+                                 <a-tag color="blue" style="margin-right: 2px;"><strong>OS</strong> [[ formatSecond(status.uptime) ]]</a-tag>
+                            </a-tooltip>
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
@@ -122,7 +128,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
-                            <a-tag :color="status.xray.color" style="margin-right: 3px;"><strong>[[ status.xray.state ]]</strong></a-tag>
+                            <a-tag :color="status.xray.color" style="margin-right: 2px;">[[ status.xray.state ]]</a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -133,10 +139,16 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
+                            </a-tooltip>
+                            <a-tooltip>
+                                 <template slot="title">
+                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
+                                 </template>
+                                <a-tag color="blue" style="margin-right: 2px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
@@ -400,7 +412,7 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = '#3dbd7d';
+                    this.xray.color = "green";
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
