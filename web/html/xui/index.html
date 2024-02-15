@@ -148,10 +148,10 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
+                            <a-button danger style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
+                            <a-button danger style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
                                 <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                            <a-button type="primary" style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
+                            <a-button style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
                             </a-tooltip>
                             <a-tooltip>
                                  <template slot="title">
