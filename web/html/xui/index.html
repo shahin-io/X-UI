@@ -99,7 +99,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="green" style="margin-right: 3px;">Up [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                           
                                <a-tooltip>
@@ -127,7 +127,7 @@
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "pages.index.xrayStatus" }}</h2>
                            
-                             <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>[[ status.xray.state ]]</b></a-tag>
+                             <a-tag :color="status.xray.color" style="margin-right: 3px;">[[ status.xray.state ]]</a-tag>
                             
                              <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -144,7 +144,7 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="green" style="margin-right: 3px;">Up [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                                 </a-tooltip>
                             
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
@@ -154,7 +154,7 @@
                                     <template slot="title">
                                         {{ i18n "pages.index.xraySwitch" }}
                                     </template>
-                            <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
+                            <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
                                </a-tooltip>
                              <a-tooltip>
                                          
@@ -174,16 +174,16 @@
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "usage" }}</h2>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 2px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 2px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue" style="margin-right: 2px;"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue" style="margin-right: 2px;">Threads [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
                                     </template>
-                            <a-tag color="blue"><strong>Load</strong> [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            <a-tag color="blue">Load [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
                         </a-tooltip>
                         </a-card>
                     </a-col>
