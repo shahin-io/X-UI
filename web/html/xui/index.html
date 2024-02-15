@@ -171,6 +171,8 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
+                            <a-statistic title="Online Users" :value="onlineClients.length"></a-statistic>
+
                             <h1 class="card-title">{{ i18n "usage" }}:</h1>
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 3px;"><b>RAM</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
