@@ -99,7 +99,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green" style="margin-right: 3px;"><b>Up</b> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="green" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                           
                                <a-tooltip>
@@ -144,7 +144,7 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="green" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                              <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                                 </a-tooltip>
                             
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
