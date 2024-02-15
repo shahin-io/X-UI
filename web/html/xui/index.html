@@ -123,8 +123,10 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "pages.index.xrayStatus" }}</h2>
-                            <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>[[ status.xray.state ]]</b></a-tag>
-                            <a-popover v-if="status.xray.state === State.Error"
+                           
+                             <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>[[ status.xray.state ]]</b></a-tag>
+                            
+                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
                                     <a-tag color="#0d49b4" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
@@ -134,18 +136,24 @@
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
                             </a-popover>
+                            
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
+                                <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                                 </a-tooltip>
-                            <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                            
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
-                                <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
+                                
+                                <a-tooltip>
+                                    <template slot="title">
+                                        {{ i18n "pages.index.xraySwitch" }}'>
+                                    </template>
                             <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                                </a-tooltip>
-                            <a-tooltip>
+                             <a-tooltip>
                                          
                         </a-card>
                     </a-col>
