@@ -196,7 +196,8 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionTcpCountDesc" }}
                                         </template>
-                                        <strong>TCP:</Strong> [[ status.tcpCount ]]
+                                        <th><strong>TCP:</Strong></th> 
+                                            <th>[[ status.tcpCount ]]</th>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -205,7 +206,8 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionUdpCountDesc" }}
                                         </template>
-                                        <strong>UDP:</strong> [[ status.udpCount ]]
+                                        <th><strong>UDP:</strong></th> 
+                                        <th>[[ status.udpCount ]]</th>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
