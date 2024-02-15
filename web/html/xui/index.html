@@ -127,7 +127,7 @@
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "pages.index.xrayStatus" }}</h2>
                            
-                             <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>[[ status.xray.state ]]</b></a-tag>
+                             <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
                             
                              <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -170,7 +170,7 @@
                     </a-col>
                 
                     </a-col>
-                    <a-col :sm="24" :md="12">
+                    <a-col :sm="24" :md="12" style="height: 75px;">
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "pages.index.systemLoad" }}</h2>
                             <a-tooltip>
