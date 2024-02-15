@@ -20,7 +20,8 @@
     }
     
     .card-title {
-    font-size: 12px;
+    text-align: left;
+    font-size: 14px;
     font-weight: bold;
     }
     
@@ -94,7 +95,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            <h1 class="card-title" style="text-align: left;">{{ i18n "pages.index.machineInfo" }}:</h1>
+                            <h1 class="card-title">{{ i18n "pages.index.machineInfo" }}:</h1>
                             <a-tooltip>
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
@@ -114,7 +115,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
+                            <h1 class="card-title">{{ i18n "pages.index.operationHours" }}:</h1> 
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
@@ -131,7 +132,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
+                            <h1 class="card-title">{{ i18n "pages.index.xrayStatus" }}:</h1>
                             <a-tag :color="status.xray.color" style="margin-right: 3px;"><strong>[[ status.xray.state ]]</strong></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -152,7 +153,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "menu.link" }}:</strong>
+                            <h1 class="card-title">{{ i18n "menu.link" }}:</h1>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
@@ -160,7 +161,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
+                            <strong>{{ i18n "pages.index.systemLoad" }}:</h1> 
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
@@ -171,7 +172,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <strong>{{ i18n "usage" }}:</strong>
+                            <h1 class="card-title">{{ i18n "usage" }}:</h1>
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 3px;"><b>RAM</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
