@@ -98,13 +98,14 @@
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
                             </template>
+                            <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
+                            </a-tooltip>
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green"><strong>OS</strong> [[ formatSecond(status.uptime) ]]</a-tag>
-                            </a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
+                                 <a-tag color="green"><strong>Up</strong> [[ formatSecond(status.uptime) ]]</a-tag>
+                            
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
@@ -113,12 +114,10 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a-tooltip>
-                                <template slot="title">
-                                 <a-icon type="github"></a-icon>
+                            
                                 </template>
                             <a rel="noopener" href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="blue"><strong>X-UI</strong> {{ .cur_ver }}</a-tag></a>
-                            </template>
+                            
                         </a-card>
                     </a-col>
 
@@ -141,8 +140,8 @@
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
                                 <a-tag color="green" style="margin-right: 4px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            <a-button danger style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
-                            <a-button style="cursor: pointer; margin-right: 3px;" size="small" danger @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
+                            <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
+                            <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
                                 <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                             <a-button style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
                             </a-tooltip>
@@ -160,16 +159,7 @@
                             <a-button type="primary" style="cursor: pointer;" size="small" @click="openBackup">{{ i18n "pages.index.backup" }}</a-button>
                         </a-card>
                     </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <h2 class="title" style="text-align: left;">{{ i18n "pages.index.systemLoad" }}:</h2> 
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.systemLoadDesc" }}
-                                    </template>
-                            <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
-                        </a-tooltip>
-                        </a-card>
+                
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
@@ -180,6 +170,12 @@
                             <a-tooltip>
                               <a-tag color="blue"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
+                            <a-tooltip>
+                                <template slot="title">
+                                    {{ i18n "pages.index.systemLoadDesc" }}
+                                    </template>
+                            <a-tag color="blue"><strong>Load</strong> [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                        </a-tooltip>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
