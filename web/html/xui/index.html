@@ -171,7 +171,13 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <a-statistic title="Online Users" :value="onlineClients.length"></a-statistic>
+                            
+                            <a-popover title='{{ i18n "online" }}' :overlay-class-name="themeSwitcher.currentTheme">
+                                    <template slot="content">
+                                        <p v-for="clientEmail in onlineClients">[[ clientEmail ]]</p>
+                                    </template>
+                                    <a-tag color="green" v-if="onlineClients.length">[[ onlineClients.length ]]</a-tag>
+                                </a-popover>
 
                             <h1 class="card-title">{{ i18n "usage" }}:</h1>
                             <a-tooltip>
