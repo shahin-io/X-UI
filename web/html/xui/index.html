@@ -104,7 +104,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green"><strong>Up</strong> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
@@ -138,12 +138,13 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="green" style="margin-right: 4px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                </a-tooltip>
+                            <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
                             <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
                                 <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                             <a-button style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
-                            </a-tooltip>
+                               </a-tooltip>
                             <a-tooltip>
                                          
                         </a-card>
@@ -162,10 +163,10 @@
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "usage" }}</h2>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 4px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 3px;"><strong>RAM</strong> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue" style="margin-right: 3px;"><strong>Threads</strong> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                                 <template slot="title">
