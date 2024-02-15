@@ -172,19 +172,19 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <h2 class="title" style="text-align: left;">{{ i18n "usage" }}</h2>
+                            <h2 class="title" style="text-align: left;">{{ i18n "pages.index.systemLoad" }}</h2>
+                            <a-tooltip>
+                                <template slot="title">
+                                    {{ i18n "pages.index.systemLoadDesc" }}
+                                    </template>
+                            <a-tag color="blue" style="margin-right: 2px;">Load [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                        </a-tooltip>
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 2px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
                               <a-tag color="blue" style="margin-right: 2px;">Threads [[ status.appStats.threads ]]</a-tag>
-                            </a-tooltip>
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.systemLoadDesc" }}
-                                    </template>
-                            <a-tag color="blue">Load [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
-                        </a-tooltip>
+                            </a-tooltip>  
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
