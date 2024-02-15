@@ -140,10 +140,10 @@
                                  </template>
                                 </a-tooltip>
                             <a-tag color="green" style="margin-right: 3px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
-                            <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                                 <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                            <a-button style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
+                            <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                                </a-tooltip>
                             <a-tooltip>
                                          
@@ -152,9 +152,9 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "menu.link" }}</h2>
-                            <a-tag color="blue" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px;" size="small" @click="openConfig()">{{ i18n "pages.index.config" }}</a-button>
-                            <a-button type="primary" style="cursor: pointer;" size="small" @click="openBackup">{{ i18n "pages.index.backup" }}</a-button>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
+                            <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
                 
