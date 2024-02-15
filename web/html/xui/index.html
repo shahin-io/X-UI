@@ -18,6 +18,7 @@
     .ant-card-dark h2 {
         color: hsla(0,0%,100%,.65);
     }
+    
 </style>
 <body>
 <a-layout id="app" v-cloak :class="themeSwitcher.currentTheme">
@@ -98,7 +99,7 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI {{ .cur_ver }}</b></a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col>
@@ -136,7 +137,7 @@
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion"><b>v[[ status.xray.version ]]</b></a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
