@@ -152,7 +152,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <h2 class="title" style="text-align: left;">{{ i18n "menu.link" }}</h2>
-                            <a-button type="primary" style="cursor: pointer; margin-right: 3px;" size="small" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-button>
+                            <a-tag color="blue" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-button type="primary" style="cursor: pointer; margin-right: 3px;" size="small" @click="openConfig()">{{ i18n "pages.index.config" }}</a-button>
                             <a-button type="primary" style="cursor: pointer;" size="small" @click="openBackup">{{ i18n "pages.index.backup" }}</a-button>
                         </a-card>
