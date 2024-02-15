@@ -138,16 +138,14 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="green" style="margin-right: 4px;"><strong>Xray</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="green" style="margin-right: 4px;"><strong>Up</strong> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-button>
                             <a-button style="cursor: pointer; margin-right: 3px;" size="small" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-button>
                                 <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
                             <a-button style="cursor: pointer;" size="small" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-button>
                             </a-tooltip>
                             <a-tooltip>
-                                 <template slot="title">
-                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
-                                 </template>                  
+                                         
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
