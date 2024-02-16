@@ -109,13 +109,13 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag :color="status.xray.color" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green">OS [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -162,7 +162,6 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
-                            
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
@@ -171,8 +170,6 @@
                             </a-tooltip>
                         </a-card>
                     </a-col>
-
-                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -356,18 +353,17 @@
         get color() {
             const percent = this.percent;
             if (percent < 80) {
-                return '#3dbd7d';
+                return '#0e49b5';
             } else if (percent < 90) {
-                return '#FF8733';
+                return '#ffa031';
             } else {
-                return '#D92906';
+                return '#e04141';
             }
         }
     }
-    
+
     class Status {
         constructor(data) {
-            this.onlineClients = msg.obj != null ? msg.obj : [];
             this.cpu = new CurTotal(0, 0);
             this.cpuCount = 0;
             this.disk = new CurTotal(0, 0);
@@ -404,7 +400,7 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = "green";
+                    this.xray.color = '#3dbd7d';
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
