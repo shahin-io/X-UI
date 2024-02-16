@@ -98,7 +98,7 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI {{ .cur_ver }}</b></a-tag></a>
                             </template>
                         </a-card>
                     </a-col>
@@ -109,20 +109,20 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag :color="status.xray.color" style="margin-right: 3px;">Xray <b>[[ formatSecond(status.appStats.uptime) ]]</b></a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="green">OS <b>[[ formatSecond(status.uptime) ]]</b></a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
-                            <a-tag :color="status.xray.color" style="margin-right: 3px;"><strong>[[ status.xray.state ]]</strong></a-tag>
+                            <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>[[ status.xray.state ]]</b></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -136,7 +136,7 @@
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion"><b>[[ status.xray.version ]]</b></a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
@@ -155,7 +155,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
                                     </template>
-                            <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            <a-tag color="blue"><b>[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</b></a-tag>
                         </a-tooltip>
                         </a-card>
                     </a-col>
@@ -163,10 +163,10 @@
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 3px;">RAM <b>[[ sizeFormat(status.appStats.mem) ]]</b></a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue"><b>Threads</b> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
