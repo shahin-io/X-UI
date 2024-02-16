@@ -65,14 +65,14 @@
         <a-layout-content>
             <a-spin :spinning="spinning" :delay="500" tip='{{ i18n "loading"}}'>
                 <transition name="list" appear>
-                    <a-alert type="error" v-if="showAlert" style="margin-bottom: 10px"
-                    message='{{ i18n "secAlertTitle" }}'
-                    color="white"
-                    background-color="red"
-                    description='{{ i18n "secAlertSsl" }}'
-                    show-icon closable
-                    >
-                    </a-alert>
+                    <a-alert type="error" v-if="showAlert" style="margin-bottom: 10px; background-color: red; color: white;" closable>
+                    <template #message>
+                    <a-icon type="close-circle" style="color: white;"></a-icon>
+                    <strong>{{ i18n "secAlertTitle" }}</strong>
+                    </template>
+                    {{ i18n "secAlertSsl" }}
+                  </a-alert>
+
                 </transition>
                 <a-space direction="vertical">
                     <a-card hoverable style="margin-bottom: .5rem;">
