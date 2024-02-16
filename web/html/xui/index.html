@@ -170,12 +170,6 @@
                             </a-tooltip>
                         </a-card>
                     </a-col>
-                    
-                    <a-col :sm="24" :md="12">
-        <a-card hoverable>
-        <a-statistic title="Online Users" :value="onlineClients.length"></a-statistic>
-        </a-card>
-        </a-col>
 
                     
                     <a-col :sm="24" :md="12">
@@ -369,84 +363,7 @@
             }
         }
     }
-
-const app = new Vue({
-        delimiters: ['[[', ']]'],
-        el: '#app',
-        data: {
-            siderDrawer,
-            themeSwitcher,
-            spinning: false,
-            inbounds: [],
-            dbInbounds: [],
-            searchKey: '',
-            enableFilter: false,
-            filterBy: '',
-            searchedInbounds: [],
-            expireDiff: 0,
-            trafficDiff: 0,
-            defaultCert: '',
-            defaultKey: '',
-            clientCount: [],
-            onlineClients: [],
-            isRefreshEnabled: localStorage.getItem("isRefreshEnabled") === "true" ? true : false,
-            refreshing: false,
-            refreshInterval: Number(localStorage.getItem("refreshInterval")) || 5000,
-            subSettings: {
-                enable : false,
-                subURI : ''
-            },
-            remarkModel: '-ieo',
-            tgBotEnable: false,
-            showAlert: false,
-            pageSize: 0,
-            isMobile: window.innerWidth <= 768,
-        },
-        methods: {
-            loading(spinning = true) {
-                this.spinning = spinning;
-            },
-            async getDBInbounds() {
-                this.refreshing = true;
-                const msg = await HttpUtil.post('/xui/inbound/list');
-                if (!msg.success) {
-                    this.refreshing = false;
-                    return;
-                }
-                await this.getOnlineUsers();
-                this.setInbounds(msg.obj);
-                setTimeout(() => {
-                    this.refreshing = false;
-                }, 500);
-            },
-            async getOnlineUsers() {
-                const msg = await HttpUtil.post('/xui/inbound/onlines');
-                if (!msg.success) {
-                    return;
-                }
-                this.onlineClients = msg.obj != null ? msg.obj : [];
-            },
-            async getDefaultSettings() {
-                const msg = await HttpUtil.post('/xui/setting/defaultSettings');
-                if (!msg.success) {
-                    return;
-                }
-                with(msg.obj){
-                    this.expireDiff = expireDiff * 86400000;
-                    this.trafficDiff = trafficDiff * 1073741824;
-                    this.defaultCert = defaultCert;
-                    this.defaultKey = defaultKey;
-                    this.tgBotEnable = tgBotEnable;
-                    this.subSettings = {
-                        enable : subEnable,
-                        subURI: subURI
-                    };
-                    this.pageSize = pageSize;
-                    this.remarkModel = remarkModel;
-                }
-            },
-
-
+    
     class Status {
         constructor(data) {
             this.cpu = new CurTotal(0, 0);
