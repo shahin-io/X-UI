@@ -18,16 +18,6 @@
     .ant-card-dark h2 {
         color: hsla(0,0%,100%,.65);
     }
-    
-    .card-title {
-    font-size: 14px;
-    font-weight: bold;
-    }
-    
-    .dark h1 {
-    color: rgba(255, 255, 255, 0.85);
-    }
-    
 </style>
 <body>
 <a-layout id="app" v-cloak :class="themeSwitcher.currentTheme">
@@ -94,7 +84,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            <h1 class="card-title">{{ i18n "pages.index.machineInfo" }}:</h1>
+                            <strong>{{ i18n "pages.index.machineInfo" }}:</strong>
                             <a-tooltip>
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
@@ -114,24 +104,24 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <h1 class="card-title">{{ i18n "pages.index.operationHours" }}:</h1> 
+                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Xray</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green"><b>OS</b> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <h1 class="card-title">{{ i18n "pages.index.xrayStatus" }}:</h1>
+                            <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
                             <a-tag :color="status.xray.color" style="margin-right: 3px;"><strong>[[ status.xray.state ]]</strong></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -146,13 +136,13 @@
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">v[[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <h1 class="card-title">{{ i18n "menu.link" }}:</h1>
+                            <strong>{{ i18n "menu.link" }}:</strong>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
@@ -160,7 +150,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <h1 class="card-title">{{ i18n "pages.index.systemLoad" }}:</h1> 
+                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.systemLoadDesc" }}
@@ -171,13 +161,12 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-
-                            <h1 class="card-title">{{ i18n "usage" }}:</h1>
+                            <strong>{{ i18n "usage" }}:</strong>
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 3px;"><b>RAM</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue"><b>Threads</b> [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -340,12 +329,6 @@
 {{template "component/themeSwitcher" .}}
 {{template "textModal"}}
 <script>
-
-isClientOnline(email) {
-                return this.onlineClients.includes(email);
-            },
-
-
     const State = {
         Running: "Running",
         Stop: "Stop",
@@ -370,11 +353,11 @@ isClientOnline(email) {
         get color() {
             const percent = this.percent;
             if (percent < 80) {
-                return '#3dbd7d';
+                return '#0e49b5';
             } else if (percent < 90) {
-                return '#FF8733';
+                return '#ffa031';
             } else {
-                return '#D92906';
+                return '#e04141';
             }
         }
     }
@@ -417,7 +400,7 @@ isClientOnline(email) {
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = "green";
+                    this.xray.color = '#3dbd7d';
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
