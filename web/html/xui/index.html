@@ -163,9 +163,6 @@
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
                             
-                            <a-statistic v-if="onlineClients.length" :title="'Online Users'" :value="onlineClients.length" color="green"></a-statistic>
-                            
-                            
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
