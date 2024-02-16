@@ -162,6 +162,10 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "usage" }}:</strong>
+                            
+                            <a-statistic v-if="onlineClients.length" :title="'Online Users'" :value="onlineClients.length" color="green"></a-statistic>
+                            
+                            
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
@@ -366,6 +370,7 @@
     
     class Status {
         constructor(data) {
+            this.onlineClients = msg.obj != null ? msg.obj : [];
             this.cpu = new CurTotal(0, 0);
             this.cpuCount = 0;
             this.disk = new CurTotal(0, 0);
