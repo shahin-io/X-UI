@@ -3,7 +3,7 @@
          :confirm-loading="warpModal.confirmLoading" :closable="true" :mask-closable="true"
          :footer="null" :class="themeSwitcher.currentTheme">
     <template v-if="ObjectUtil.isEmpty(warpModal.warpData)">
-        <a-button icon="api" @click="register" :loading="warpModal.confirmLoading">{{ i18n "pages.inbounds.create" }}</a-button>
+        <a-button type="success" icon="api" @click="register" :loading="warpModal.confirmLoading">{{ i18n "pages.inbounds.create" }}</a-button>
     </template>
     <template v-else>
         <table style="margin: 5px 0; width: 100%;">
