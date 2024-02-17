@@ -87,18 +87,20 @@
                             <div> <span style="font-weight: bold;">{{ i18n "pages.index.machineInfo" }}</span> </div>
                             
                             <a-tooltip>
+                            <template slot="title">
+                            {{ i18n "pages.index.hostname" }}
+                            </template>
+                            <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
+                            </a-tooltip>
+                            
+                            <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
                                  <a-tag color="green" style="margin-right: 3px;">Up: [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                             
-                            <a-tooltip>
-                            <template slot="title">
-                            {{ i18n "pages.index.hostname" }}
-                            </template>
-                            <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
-                            </a-tooltip>
+                            
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
                                 <template slot="title">
