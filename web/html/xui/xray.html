@@ -70,8 +70,11 @@
             message='{{ i18n "secAlertTitle" }}'
             description='{{ i18n "secAlertSsl" }}'
             show-icon closable>
+            <template #icon>
+            <a-icon type="close-circle" style="color: white;" />
+            </template>
             </a-alert>
-
+            
                 </transition>
                 <a-space direction="vertical">
                     <a-card hoverable style="margin-bottom: .5rem;">
