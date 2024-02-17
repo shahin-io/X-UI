@@ -117,16 +117,16 @@
                         <a-card hoverable>
                             <div> <span style="font-weight: bold;">{{ i18n "pages.index.xrayStatus" }}</span> </div>
                             <a-tag :color="status.xray.color" style="margin-right: 2px;">[[ status.xray.state ]]</a-tag>
-                            
-<a-tag :color="status.xray.color" style="margin-right: 2px;">[[ status.xray.state ]]<a-icon type="exclamation-circle" v-if="status.xray.state === State.Error" /></a-tag>
-<a-popover v-if="status.xray.state === State.Error" :overlay-class-name="themeSwitcher.currentTheme">
-  <span slot="title" style="font-size: 12pt">An error occurred while running Xray
-    <a-tag color="purple" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-  </span>
-  <template slot="content">
-    <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
-  </template>
-</a-popover>
+                            <a-popover v-if="status.xray.state === State.Error"
+                                :overlay-class-name="themeSwitcher.currentTheme">
+                                <span slot="title" style="font-size: 12pt">An error occurred while running Xray
+                                    <a-tag color="purple" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
+                                </span>
+                                <template slot="content">
+                                    <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
+                                </template>
+                                <a-icon type="exclamation-circle"></a-icon>
+                            </a-popover>
 
                             
                             <a-tooltip>
