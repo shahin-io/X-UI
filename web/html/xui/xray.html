@@ -269,7 +269,7 @@
                                         <setting-list-item type="switch" title='{{ i18n "pages.xray.SpotifyWARP"}}' desc='{{ i18n "pages.xray.SpotifyWARPDesc"}}' v-model="SpotifyWARPSettings"></setting-list-item>
                                         <setting-list-item type="switch" title='{{ i18n "pages.xray.MetaWARP"}}' desc='{{ i18n "pages.xray.MetaWARPDesc"}}' v-model="MetaWARPSettings"></setting-list-item>
                                     </template>
-                                    <a-button v-else type="primary" icon="cloud" @click="showWarp">WARP</a-button>
+                                    <a-button v-else type="primary" icon="cloud" style="margin: 10px 20px;" @click="showWarp">WARP</a-button>
                                 </a-collapse-panel>
                                 <a-collapse-panel header='{{ i18n "pages.settings.resetDefaultConfig"}}'>
                                     <a-space direction="horizontal" style="padding: 0 20px">
