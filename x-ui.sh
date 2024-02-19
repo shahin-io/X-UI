@@ -89,7 +89,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/main/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/shahin-io/x-ui/main/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -108,7 +108,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/main/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/shahin-io/x-ui/main/install.sh)
     if [[ $? == 0 ]]; then
         LOGI "Update is complete, Panel has automatically restarted "
         exit 0
@@ -124,7 +124,7 @@ custom_version() {
     exit 1
     fi
 
-    download_link="https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh"
+    download_link="https://raw.githubusercontent.com/shahin-io/x-ui/master/install.sh"
 
     # Use the entered panel version in the download link
     install_command="bash <(curl -Ls $download_link) $panel_version"
@@ -133,14 +133,8 @@ custom_version() {
     eval $install_command
 }
 
-# Function to handle the deletion of the script file
-delete_script() {
-    rm "$0"  # Remove the script file itself
-    exit 1
-}
-
 uninstall() {
-    confirm "Are you sure you want to uninstall the panel? xray will also uninstalled!" " n"
+    confirm "Are you sure you want to uninstall the panel? xray will also uninstalled!" "n"
     if [[ $? != 0 ]]; then
         if [[ $# == 0 ]]; then
             show_menu
@@ -154,14 +148,14 @@ uninstall() {
     systemctl reset-failed
     rm /etc/x-ui/ -rf
     rm /usr/local/x-ui/ -rf
-    echo -e "\nUninstalled Successfully."
+
     echo ""
-    echo -e "If you need to install this panel again, you can use below command:"
-    echo -e "${green}bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)${plain}"
+    echo -e "Uninstalled Successfully，If you want to remove this script，then after exiting the script run ${green}rm /usr/bin/x-ui -f${plain} to delete it."
     echo ""
-    # Trap the SIGTERM signal
-    trap delete_script SIGTERM
-    delete_script
+
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
 }
 
 reset_user() {
@@ -315,7 +309,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/alireza0/x-ui/raw/main/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/shahin-io/x-ui/raw/main/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         LOGE "Failed to download script，Please check whether the machine can connect Github"

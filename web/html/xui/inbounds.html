@@ -56,12 +56,14 @@
         <a-layout-content>
             <a-spin :spinning="spinning" :delay="500" tip='{{ i18n "loading"}}'>
                 <transition name="list" appear>
-                    <a-alert type="error" v-if="showAlert" style="margin-bottom: 10px"
+                    <a-alert type="error" v-if="showAlert"
+                    style="margin: 8px 4px; font-weight: bold; background-color: red; color: white;"
                     message='{{ i18n "secAlertTitle" }}'
-                    color="red"
                     description='{{ i18n "secAlertSsl" }}'
-                    show-icon closable
-                    >
+                    show-icon closable>
+                    <template #icon>
+                    <a-icon type="warning" style="color: white;" />
+                    </template>
                     </a-alert>
                 </transition>
                 <transition name="list" appear>
@@ -85,7 +87,10 @@
                                         <a-back-top :target="() => document.getElementById('content-layout')" visibility-height="200">
                                         </a-back-top>
                                 <strong>{{ i18n "clients" }}:</strong>
-                                <a-tag color="blue">[[ total.clients ]]</a-tag>
+                                <a-tooltip title="Total Clients">
+                                   <a-tag color="blue">[[ total.clients ]]</a-tag>
+                                 </a-tooltip>
+
                                 <a-popover title='{{ i18n "disabled" }}' :overlay-class-name="themeSwitcher.currentTheme">
                                     <template slot="content">
                                         <p v-for="clientEmail in total.deactive">[[ clientEmail ]]</p>
@@ -516,7 +521,7 @@
     }, {
         title: '{{ i18n "pages.inbounds.remark" }}',
         align: 'left',
-        width: 70,
+        width: 90,
         dataIndex: "remark",
     }, {
         title: '{{ i18n "pages.inbounds.info" }}',
