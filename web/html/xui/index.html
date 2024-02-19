@@ -163,10 +163,10 @@
                               <a-tag color="blue" style="margin-right: 2px;">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
                             </a-tooltip>                 
                             <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 2px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            <a-tag color="blue" style="margin-right: 2px;"><b>RAM</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
                             <a-tooltip>
-                              <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
+                              <a-tag color="blue"><b>Threads</b> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>      
@@ -353,11 +353,11 @@
         get color() {
             const percent = this.percent;
             if (percent < 80) {
-                return "blue";
+                return '#3dbd7d';            //iOS Green
             } else if (percent < 90) {
-                return '#FF8733';
+                return '#FF8733';            //BurgerKing Orange
             } else {
-                return '#D92906';
+                return '#D92906';            //NASA Red
             }
         }
     }
