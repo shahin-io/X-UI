@@ -79,7 +79,7 @@
 "hard" = "硬盘"
 "machineInfo" = "机器"
 "hostname" = "主机名"
-"xrayStatus" = "Xray"
+"xrayStatus" = "Xray 状态"
 "stopXray" = "停止"
 "restartXray" = "重启"
 "xraySwitch" = "切换版本"
