@@ -411,7 +411,22 @@ getClientCounts(dbInbound, inbound) {
     online: online,
   };
 },
-
+mounted() {
+            if (window.location.protocol !== "https:") {
+                this.showAlert = true;
+            }
+            window.addEventListener('resize', this.onResize);
+            this.onResize();
+            this.loading();
+            this.getDefaultSettings();
+            if (this.isRefreshEnabled) {
+                this.startDataRefreshLoop();
+            }
+            else {
+                this.getDBInbounds();
+            }
+            this.loading(false);
+        },
 computed: {
   total() {
     let down = 0, up = 0;
