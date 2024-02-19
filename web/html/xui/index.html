@@ -82,27 +82,24 @@
                     </a-card>
                 </a-row>
             </transition>
+            
             <transition name="list" appear>
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable> 
-                            <div><p style="font-weight: bold; margin-bottom: 5px;">{{ i18n "pages.index.machineInfo" }}</p></div>
-                            
+                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.machineInfo" }}</p></div>               
                             <a-tooltip>
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
                             </template>
                             <a-tag color="blue" style="margin-right: 2px;">[[ status.hostInfo.hostname ]]</a-tag>
-                            </a-tooltip>
-                            
+                            </a-tooltip>  
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="green" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
-                            
-                            
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
                                 <template slot="title">
@@ -113,11 +110,11 @@
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
-                    </a-col>
-                    
+                    </a-col> 
+                       
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <div><p style="font-weight: bold; margin-bottom: 5px;">{{ i18n "pages.index.xrayStatus" }}</p></div>
+                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.xrayStatus" }}</p></div>
                             <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -128,16 +125,13 @@
                                     <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
-                            </a-popover>
-
-                            
+                            </a-popover>      
                             <a-tooltip>
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
                                 <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>      
-                            
+                            </a-tooltip>                   
                             <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
@@ -145,17 +139,19 @@
                             </a-tooltip>                   
                         </a-card>
                     </a-col>
+                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            <div><p style="font-weight: bold; margin-bottom: 5px;">{{ i18n "menu.link" }}</p></div>
+                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "menu.link" }}</p></div>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
+                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                          <div><p style="font-weight: bold; margin-bottom: 5px;">{{ i18n "pages.index.systemLoad" }}</p></div>
+                          <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.systemLoad" }}</p></div>
                           <a-tooltip>
                             <template slot="title">
                               {{ i18n "pages.index.systemLoadDesc" }}
@@ -169,7 +165,8 @@
                               <a-tag color="blue"><b>Threads</b> [[ status.appStats.threads ]]</a-tag>
                             </a-tooltip>
                         </a-card>
-                    </a-col>      
+                    </a-col> 
+                         
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -181,7 +178,7 @@
                                         </template>
                                         <strong>TCP:</Strong> [[ status.tcpCount ]]
                                     </a-tooltip>
-                                </a-col>
+                                </a-col>          
                                 <a-col :span="12">
                                     <a-icon type="swap"></a-icon>
                                     <a-tooltip>
@@ -194,6 +191,7 @@
                             </a-row>
                         </a-card>
                     </a-col>
+                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -206,6 +204,7 @@
                                         <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
                                     </a-tooltip>
                                 </a-col>
+                                
                                 <a-col :span="12">
                                     <a-icon type="arrow-down"></a-icon>
                                     <a-tooltip>
@@ -218,6 +217,7 @@
                             </a-row>
                         </a-card>
                     </a-col>
+                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -230,6 +230,7 @@
                                         <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
                                     </a-tooltip>
                                 </a-col>
+                                
                                 <a-col :span="12">
                                     <a-icon type="cloud-download"></a-icon>
                                     <a-tooltip>
