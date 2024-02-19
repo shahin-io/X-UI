@@ -98,7 +98,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
@@ -107,7 +107,7 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple">X-UI {{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI</b> {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col> 
@@ -401,7 +401,7 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = "green";
+                    this.xray.color = "blue";
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
