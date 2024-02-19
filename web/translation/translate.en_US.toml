@@ -370,7 +370,7 @@
 "NetflixWARP" = "Netflix"
 "NetflixWARPDesc" = "Routes traffic to Netflix via WARP."
 "MetaWARP" = "Meta"
-"MetaWARPDesc" = "Routes traffic to Meta (Instagram, Facebook, WhatsApp, Threads,...) via WARP."
+"MetaWARPDesc" = "Routes traffic to Meta (Instagram, Facebook, WhatsApp,...) via WARP."
 "SpotifyWARP" = "Spotify"
 "SpotifyWARPDesc" = "Routes traffic to Spotify via WARP."
 "completeTemplate" = "All"
