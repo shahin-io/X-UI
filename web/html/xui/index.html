@@ -213,7 +213,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
-                                        <strong>Dn:</strong> [[ sizeFormat(status.netIO.down) ]]/s
+
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -403,7 +403,7 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = "blue";
+                    this.xray.color = 'blue';
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
@@ -439,7 +439,7 @@
         show(logs) {
             this.visible = true;
             this.logs = logs; 
-            this.formattedLogs = this.logs.length > 0 ? this.formatLogs(this.logs) : "No Record...";
+            this.formattedLogs = this.logs?.length > 0 ? this.formatLogs(this.logs) : "No Record...";
         },
         formatLogs(logs) {
             let formattedLogs = '';

@@ -310,7 +310,7 @@
 "generalConfigs" = "General Strategy"
 "generalConfigsDesc" = "These options will determine general strategy adjustments."
 "logConfigs" = "Log Settings"
-"logConfigsDesc" = "Logs may affect your server's efficiency. It is recommended to enable it wisely only in case of your needs"
+"logConfigsDesc" = "Enabling log may impact your machine's performance. It is recommended to enable it wisely only when necessary."
 "blockConfigs" = "Protection Shield"
 "blockConfigsDesc" = "These options will block traffic based on specific requested protocols and websites."
 "blockCountryConfigs" = "Block Country"
@@ -318,7 +318,7 @@
 "directCountryConfigs" = "Direct Country"
 "directCountryConfigsDesc" = "These options will directly forward traffic based on the specific requested country."
 "ipv4Configs" = "IPv4 Routing"
-"ipv4ConfigsDesc" = "These options will route traffic based on specific requested destination via system's IPv4."
+"ipv4ConfigsDesc" = "These options will route traffic based on specific requested destination via machine's IPv4."
 "warpConfigs" = "WARP Config"
 "warpConfigsDesc" = "These options will route traffic based on specific requested destination via WARP."
 "Template" = "Advanced Xray Configuration Template"
@@ -369,6 +369,8 @@
 "OpenAIWARPDesc" = "Routes traffic to ChatGPT via WARP."
 "NetflixWARP" = "Netflix"
 "NetflixWARPDesc" = "Routes traffic to Netflix via WARP."
+"MetaWARP" = "Meta"
+"MetaWARPDesc" = "Routes traffic to Meta (Instagram, Facebook, WhatsApp,...) via WARP."
 "SpotifyWARP" = "Spotify"
 "SpotifyWARPDesc" = "Routes traffic to Spotify via WARP."
 "completeTemplate" = "All"
@@ -376,6 +378,7 @@
 "Outbounds" = "Outbounds"
 "Routings" = "Routing Rules"
 "RoutingsDesc" = "The priority of each rule is important!"
+"Balancers" = "Balancers"
 
 [pages.xray.rules]
 "first" = "First"
@@ -390,6 +393,7 @@
 "add" = "Add Rule"
 "edit" = "Edit Rule"
 "useComma" = "Comma-separated items"
+"balancer" = "Balancer"
 
 [pages.xray.outbound]
 "addOutbound" = "Add Outbound"
@@ -409,6 +413,15 @@
 "accountInfo" = "Account Information"
 "outboundStatus" = "Outbound Status"
 
+[pages.xray.balancer]
+"addBalancer" = "Add Balancer"
+"editBalancer" = "Edit Balancer"
+"balancerStrategy" = "Strategy"
+"balancerSelectors" = "Selectors"
+"tag" = "Tag"
+"tagDesc" = "Unique Tag"
+"balancerDesc" = "It is not possible to use balancerTag and outboundTag at the same time. If used at the same time, only outboundTag will work."
+
 [pages.xray.wireguard]
 "secretKey" = "Secret Key"
 "publicKey" = "Public Key"
@@ -416,6 +429,15 @@
 "endpoint" = "Endpoint"
 "psk" = "PreShared Key"
 "domainStrategy" = "Domain Strategy"
+
+[pages.xray.dns]
+"enable" = "Enable DNS"
+"enableDesc" = "Enable built-in DNS server"
+"strategy" = "Query Strategy"
+"strategyDesc" = "Overall strategy to resolve domain names"
+"add" = "Add Server"
+"edit" = "Edit Server"
+"domains" = "Domains"
 
 [tgbot]
 "noResult" = "❗ No result!"
