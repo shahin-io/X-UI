@@ -107,7 +107,7 @@
                             </template>
                                 <a-tag color="blue" style="margin-right: 3px;">IPv4/v6</a-tag>
                               </a-tooltip>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI</b> {{ .cur_ver }}</a-tag></a>
+                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI:</b> {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
                     </a-col> 
@@ -152,18 +152,20 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                           <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.systemLoad" }}</p></div>
-                          <a-tooltip>
+                                           
+                            <a-tooltip>
+                            <a-tag color="blue" style="margin-right: 2px;"><b>RAM:</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
+                            </a-tooltip>
+                            <a-tooltip>
+                              <a-tag color="blue"><b>Threads:</b> [[ status.appStats.threads ]]</a-tag>
+                            </a-tooltip>
+                            <a-tooltip>
                             <template slot="title">
                               {{ i18n "pages.index.systemLoadDesc" }}
                             </template>
                               <a-tag color="blue" style="margin-right: 2px;">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
-                            </a-tooltip>                 
-                            <a-tooltip>
-                            <a-tag color="blue" style="margin-right: 2px;"><b>RAM</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
-                            <a-tooltip>
-                              <a-tag color="blue"><b>Threads</b> [[ status.appStats.threads ]]</a-tag>
-                            </a-tooltip>
+                            
                         </a-card>
                     </a-col> 
                          
