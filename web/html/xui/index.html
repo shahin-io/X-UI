@@ -99,7 +99,7 @@
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="green" style="margin-right: 3px;">Up: [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                             
                             
@@ -118,7 +118,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <div> <span style="font-weight: bold;">{{ i18n "pages.index.xrayStatus" }}</span> </div>
-                            <a-tag :color="status.xray.color" style="margin-right: 2px;">[[ status.xray.state ]]</a-tag>
+                            <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
                                 <span slot="title" style="font-size: 12pt">An error occurred while running Xray
@@ -135,7 +135,7 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag :color="status.xray.color" style="margin-right: 3px;">Up: [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             
                             <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
@@ -403,7 +403,7 @@
             this.xray = data.xray;
             switch (this.xray.state) {
                 case State.Running:
-                    this.xray.color = "green";
+                    this.xray.color = "blue";
                     break;
                 case State.Stop:
                     this.xray.color = "orange";
