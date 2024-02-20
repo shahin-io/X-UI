@@ -590,40 +590,39 @@
                 this.onlineClients = msg.obj != null ? msg.obj : [];
             },
             getClientCounts(dbInbound, inbound) {
-                let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
-                clients = inbound.clients;
-                clientStats = dbInbound.clientStats
-                now = new Date().getTime()
-                if (clients) {
-                    clientCount = clients.length;
-                    if (dbInbound.enable) {
-                        clients.forEach(client => {
-                            client.enable ? active.push(client.email) : deactive.push(client.email);
-                            if(this.isClientOnline(client.email)) online.push(client.email);
-                        });
-                        clientStats.forEach(client => {
-                            if (!client.enable) {
-                                depleted.push(client.email);
-                            } else {
-                                if ((client.expiryTime > 0 && (client.expiryTime - now < this.expireDiff)) ||
-                                    (client.total > 0 && (client.total - (client.up + client.down) < this.trafficDiff))) expiring.push(client.email);
-                            }
-                        });
-                    } else {
-                        clients.forEach(client => {
-                            deactive.push(client.email);
-                        });
-                    }
+    let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
+    let clients = inbound.clients; // Add 'let' keyword here
+    let clientStats = dbInbound.clientStats; // Add 'let' keyword here
+    let now = new Date().getTime();
+    if (clients) {
+        clientCount = clients.length;
+        if (dbInbound.enable) {
+            clients.forEach(client => {
+                client.enable ? active.push(client.email) : deactive.push(client.email);
+                if(this.isClientOnline(client.email)) online.push(client.email);
+            });
+            clientStats.forEach(client => {
+                if (!client.enable) {
+                    depleted.push(client.email);
+                } else {
+                    if ((client.expiryTime > 0 && (client.expiryTime - now < this.expireDiff)) ||
+                        (client.total > 0 && (client.total - (client.up + client.down) < this.trafficDiff))) expiring.push(client.email);
                 }
-                return {
-                    clients: clientCount,
-                    active: active,
-                    deactive: deactive,
-                    depleted: depleted,
-                    expiring: expiring,
-                    online: online,
-                };
-            },
+            });
+        } else {
+            clients.forEach(client => {
+                deactive.push(client.email);
+            });
+        }
+    }
+    return {
+        clients: clientCount,
+        active: active,
+        deactive: deactive,
+        depleted: depleted,
+        expiring: expiring,
+        online: online,
+    };
             async getStatus() {
                 const msg = await HttpUtil.post('/server/status');
                 if (msg.success) {
