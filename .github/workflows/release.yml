@@ -10,10 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        platform:
-          - amd64
-          - arm64
-          - armv7
+        platform: [amd64, arm64, arm]
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
@@ -22,18 +19,15 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5.0.0
         with:
-          go-version: '1.22'
+          go-version: '1.21'
           
       - name: Install dependencies for arm64 and arm
         if: matrix.platform == 'arm64' || matrix.platform == 'arm'
         run: |
           sudo apt-get update
-          if [ "${{ matrix.platform }}" == "arm64" ]; then
-            sudo apt install gcc-aarch64-linux-gnu
-          elif [ "${{ matrix.platform }}" == "armv7" ]; then
+          sudo apt install gcc-aarch64-linux-gnu
+          if [ "${{ matrix.platform }}" == "arm" ]; then
             sudo apt install gcc-arm-linux-gnueabihf
-          elif [ "${{ matrix.platform }}" == "386" ]; then
-            sudo apt install gcc-i686-linux-gnu
           fi
 
       - name: Build x-ui
@@ -42,15 +36,9 @@ jobs:
           export GOOS=linux
           export GOARCH=${{ matrix.platform }}
           if [ "${{ matrix.platform }}" == "arm64" ]; then
-            export GOARCH=arm64
             export CC=aarch64-linux-gnu-gcc
-          elif [ "${{ matrix.platform }}" == "armv7" ]; then
-            export GOARCH=arm
-            export GOARM=7
+          elif [ "${{ matrix.platform }}" == "arm" ]; then
             export CC=arm-linux-gnueabihf-gcc
-          elif [ "${{ matrix.platform }}" == "386" ]; then
-            export GOARCH=386
-            export CC=i686-linux-gnu-gcc
           fi
           go build -o xui-release -v main.go
           
@@ -72,29 +60,24 @@ jobs:
             wget ${Xray_URL}Xray-linux-arm64-v8a.zip
             unzip Xray-linux-arm64-v8a.zip
             rm -f Xray-linux-arm64-v8a.zip
-          elif [ "${{ matrix.platform }}" == "armv7" ]; then
+          else
             wget ${Xray_URL}Xray-linux-arm32-v7a.zip
             unzip Xray-linux-arm32-v7a.zip
             rm -f Xray-linux-arm32-v7a.zip
-          elif [ "${{ matrix.platform }}" == "386" ]; then
-            wget ${Xray_URL}Xray-linux-32.zip
-            unzip Xray-linux-32.zip
-            rm -f Xray-linux-32.zip
           fi
-          rm -f geoip.dat geosite.dat
+          rm -f geoip.dat geosite.dat geoip_IR.dat geosite_IR.dat
           wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
           wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
           wget -O geoip_IR.dat https://github.com/chocolate4u/Iran-v2ray-rules/releases/latest/download/geoip.dat
           wget -O geosite_IR.dat https://github.com/chocolate4u/Iran-v2ray-rules/releases/latest/download/geosite.dat
-
           mv xray xray-linux-${{ matrix.platform }}
           cd ../..
           
       - name: Package
         run: tar -zcvf x-ui-linux-${{ matrix.platform }}.tar.gz x-ui
         
-      - name: Upload files to GH release
-        uses: MHSanaei/upload-release-action@2.8.0
+      - name: Upload
+        uses: svenstaro/upload-release-action@2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
