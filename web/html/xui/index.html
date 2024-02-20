@@ -780,6 +780,19 @@
                 fileInput.click();
             },
         },
+        async mounted() {
+            if (window.location.protocol !== "https:") {
+                this.showAlert = true;
+            }
+            while (true) {
+                try {
+                    await this.getStatus();
+                } catch (e) {
+                    console.error(e);
+                }
+                await PromiseUtil.sleep(2000);
+            }
+        },
         computed: {
             total() {
                 let down = 0, up = 0;
@@ -803,19 +816,6 @@
                     expiring: expiring,
                 };      
             }        
-        },
-        async mounted() {
-            if (window.location.protocol !== "https:") {
-                this.showAlert = true;
-            }
-            while (true) {
-                try {
-                    await this.getStatus();
-                } catch (e) {
-                    console.error(e);
-                }
-                await PromiseUtil.sleep(2000);
-            }
         },
     });
 
