@@ -90,8 +90,7 @@
             <transition name="list" appear>
                 <a-row>
                     <a-col :sm="24" :md="12">
-                        <a-card hoverable> 
-                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.machineInfo" }}</p></div>               
+                            <a-card hoverable size="small" title="{{ i18n "pages.index.machineInfo" }}">               
                             <a-tooltip>
                             <template slot="title">
                             {{ i18n "pages.index.hostname" }}
@@ -116,8 +115,7 @@
                         </a-card>
                     </a-col>            
                     <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.xrayStatus" }}</p></div>
+                            <a-card hoverable size="small" title="{{ i18n "pages.index.xrayStatus" }}">
                             <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
                             <a-popover v-if="status.xray.state === State.Error"
                                 :overlay-class-name="themeSwitcher.currentTheme">
@@ -143,15 +141,14 @@
                         </a-card>
                     </a-col>       
                     <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "menu.link" }}</p></div>
+                            <a-card hoverable size="small" title="{{ i18n "menu.link" }}">
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
-                           <a-card hoverable size="small" title="<strong>{{ i18n "pages.index.systemLoad" }}</strong>">                         
+                           <a-card hoverable size="small" title="{{ i18n "pages.index.systemLoad" }}">                         
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 1px;"><b>RAM:</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
