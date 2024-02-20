@@ -613,41 +613,40 @@ export default {
                 }
             },
             getClientCounts(dbInbound, inbound) {
-            let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
-            let clients = inbound.clients;
-            let clientStats = dbInbound.clientStats;
-            let now = new Date().getTime();
-            if (clients) {
-                clientCount = clients.length;
-                if (dbInbound.enable) {
-                    clients.forEach(client => {
-                        client.enable ? active.push(client.email) : deactive.push(client.email);
-                        if(this.isClientOnline(client.email)) online.push(client.email);
-                    });
-                    clientStats.forEach(client => {
-                        if (!client.enable) {
-                            depleted.push(client.email);
-                        } else {
-                            if ((client.expiryTime > 0 && (client.expiryTime - now < this.expireDiff)) ||
-                                (client.total > 0 && (client.total - (client.up + client.down) < this.trafficDiff))) expiring.push(client.email);
-                        }
-                    });
-                } else {
-                    clients.forEach(client => {
-                        deactive.push(client.email);
-                    });
+                let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
+                clients = inbound.clients;
+                clientStats = dbInbound.clientStats
+                now = new Date().getTime()
+                if (clients) {
+                    clientCount = clients.length;
+                    if (dbInbound.enable) {
+                        clients.forEach(client => {
+                            client.enable ? active.push(client.email) : deactive.push(client.email);
+                            if(this.isClientOnline(client.email)) online.push(client.email);
+                        });
+                        clientStats.forEach(client => {
+                            if (!client.enable) {
+                                depleted.push(client.email);
+                            } else {
+                                if ((client.expiryTime > 0 && (client.expiryTime - now < this.expireDiff)) ||
+                                    (client.total > 0 && (client.total - (client.up + client.down) < this.trafficDiff))) expiring.push(client.email);
+                            }
+                        });
+                    } else {
+                        clients.forEach(client => {
+                            deactive.push(client.email);
+                        });
+                    }
                 }
-            }
-            return {
-                clients: clientCount,
-                active: active,
-                deactive: deactive,
-                depleted: depleted,
-                expiring: expiring,
-                online: online,
-            };
-        },
-            
+                return {
+                    clients: clientCount,
+                    active: active,
+                    deactive: deactive,
+                    depleted: depleted,
+                    expiring: expiring,
+                    online: online,
+                };
+            },
             loading(spinning, tip = '{{ i18n "loading"}}') {
                 this.spinning = spinning;
                 this.loadingTip = tip;
