@@ -702,6 +702,30 @@
                 fileInput.click();
             },
         },
+        computed: {
+    total() {
+        let down = 0, up = 0;
+        let clients = 0, deactive = [], depleted = [], expiring = [];
+        this.dbInbounds.forEach(dbInbound => {
+            down += dbInbound.down;
+            up += dbInbound.up;
+            if (this.clientCount[dbInbound.id]) {
+                clients += this.clientCount[dbInbound.id].clients;
+                deactive = deactive.concat(this.clientCount[dbInbound.id].deactive);
+                depleted = depleted.concat(this.clientCount[dbInbound.id].depleted);
+                expiring = expiring.concat(this.clientCount[dbInbound.id].expiring);
+            }
+        });
+        return {
+            down: down,
+            up: up,
+            clients: clients,
+            deactive: deactive,
+            depleted: depleted,
+            expiring: expiring
+        };
+    }
+},
         async mounted() {
             if (window.location.protocol !== "https:") {
                 this.showAlert = true;
