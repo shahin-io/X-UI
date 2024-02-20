@@ -535,6 +535,26 @@
                 this.spinning = spinning;
                 this.loadingTip = tip;
             },
+            async getDBInbounds() {
+                this.refreshing = true;
+                const msg = await HttpUtil.post('/xui/inbound/list');
+                if (!msg.success) {
+                    this.refreshing = false;
+                    return;
+                }
+                await this.getOnlineUsers();
+                this.setInbounds(msg.obj);
+                setTimeout(() => {
+                    this.refreshing = false;
+                }, 500);
+            },
+            async getOnlineUsers() {
+                const msg = await HttpUtil.post('/xui/inbound/onlines');
+                if (!msg.success) {
+                    return;
+                }
+                this.onlineClients = msg.obj != null ? msg.obj : [];
+            },
             async getStatus() {
                 const msg = await HttpUtil.post('/server/status');
                 if (msg.success) {
