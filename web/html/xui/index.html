@@ -781,18 +781,19 @@
             },
         },
         async mounted() {
-            if (window.location.protocol !== "https:") {
-                this.showAlert = true;
-            }
-            while (true) {
-                try {
-                    await this.getStatus();
-                } catch (e) {
-                    console.error(e);
+                if (window.location.protocol !== "https:") {
+                    this.showAlert = true;
                 }
-                await PromiseUtil.sleep(2000);
-            }
-        },
+                while (true) {
+                    try {
+                        await this.getStatus();
+                    } catch (e) {
+                        console.error(e);
+                    }
+                    await PromiseUtil.sleep(2000);
+                }
+                this.getDBInbounds(); // Moved the getDBInbounds call outside the while loop
+            },
         computed: {
             total() {
                 let down = 0, up = 0;
