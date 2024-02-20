@@ -569,26 +569,22 @@
                 this.spinning = spinning;
                 this.loadingTip = tip;
             },
-            async getDBInbounds() {
-                this.refreshing = true;
-                const msg = await HttpUtil.post('/xui/inbound/list');
-                if (!msg.success) {
-                    this.refreshing = false;
-                    return;
-                }
-                await this.getOnlineUsers();
-                this.setInbounds(msg.obj);
-                setTimeout(() => {
-                    this.refreshing = false;
-                }, 500);
-            },
-            async getOnlineUsers() {
-                const msg = await HttpUtil.post('/xui/inbound/onlines');
-                if (!msg.success) {
-                    return;
-                }
-                this.onlineClients = msg.obj != null ? msg.obj : [];
-            },
+async getDBInbounds() {
+        this.loading(); // Start showing the loading spinner
+        this.refreshing = true;
+        const msg = await HttpUtil.post('/xui/inbound/list');
+        if (!msg.success) {
+            this.refreshing = false;
+            this.loading(false); // Stop the loading spinner
+            return;
+        }
+        await this.getOnlineUsers();
+        this.setInbounds(msg.obj);
+        setTimeout(() => {
+            this.refreshing = false;
+            this.loading(false); // Stop the loading spinner
+        }, 500);
+    },
             getClientCounts(dbInbound, inbound) {
                 let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
                 clients = inbound.clients;
