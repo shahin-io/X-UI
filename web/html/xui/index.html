@@ -96,12 +96,6 @@
                             {{ i18n "pages.index.hostname" }}
                             </template>
                             <a-tag color="blue" style="margin-right: 2px;">[[ status.hostInfo.hostname ]]</a-tag>
-                            </a-tooltip>  
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.operationHoursDesc" }}
-                                </template>
-                                 <a-tag color="blue" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                             <template v-if="status.hostInfo.ipv4">    
                             <a-tooltip>
@@ -114,6 +108,22 @@
                             </template>
                         </a-card>
                     </a-col>            
+                    a-col :sm="24" :md="12">
+                        <a-card hoverable size="small" title="{{ i18n "pages.index.operationHours" }}">
+                            <a-tooltip>
+                                 <template slot="title">
+                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
+                                 </template>
+                                <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Xray</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                            </a-tooltip>      
+                            <a-tooltip>
+                                <template slot="title">
+                                    {{ i18n "pages.index.operationHoursDesc" }}
+                                </template>
+                                 <a-tag color="blue"><b>OS:</b> [[ formatSecond(status.uptime) ]]</a-tag>
+                            </a-tooltip>
+                        </a-card>
+                    </a-col>
                     <a-col :sm="24" :md="12">
                             <a-card hoverable size="small" title="{{ i18n "pages.index.xrayStatus" }}">
                             <a-tag :color="status.xray.color" style="margin-right: 2px;"><b>[[ status.xray.state ]]</b></a-tag>
@@ -126,13 +136,7 @@
                                     <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
                                 </template>
                                 <a-icon type="exclamation-circle"></a-icon>
-                            </a-popover>      
-                            <a-tooltip>
-                                 <template slot="title">
-                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
-                                 </template>
-                                <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Up:</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>                   
+                            </a-popover>                
                             <a-tag color="purple" style="cursor: pointer; margin-right: 2px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
