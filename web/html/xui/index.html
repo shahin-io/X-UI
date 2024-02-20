@@ -591,8 +591,8 @@
             },
             getClientCounts(dbInbound, inbound) {
     let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
-    let clients = inbound.clients; // Add 'let' keyword here
-    let clientStats = dbInbound.clientStats; // Add 'let' keyword here
+    clients = inbound.clients; // Add 'let' keyword here
+    clientStats = dbInbound.clientStats; // Add 'let' keyword here
     let now = new Date().getTime();
     if (clients) {
         clientCount = clients.length;
