@@ -145,14 +145,14 @@
                         </a-card>
                     </a-col>       
                     <a-col :sm="24" :md="12">
-                            <a-card hoverable size="small" title="{{ i18n "menu.link" }}">
+                            <a-card hoverable :style="{ fontWeight: 'bold' }" size="small" :title="i18n('menu.link')">
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
-                           <a-card hoverable size="small" title="{{ i18n "pages.index.systemLoad" }}">                         
+                           <a-card hoverable :style="{ fontWeight: 'bold' }" size="small" title="{{ i18n "pages.index.systemLoad" }}">                         
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 1px;"><b>RAM:</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
