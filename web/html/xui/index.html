@@ -170,7 +170,9 @@
                     </a-col>
                     
                      <a-col :sm="24" :md="12">
-                        <a-card hoverable>                            
+                        <a-card hoverable>
+                            <strong>{{ i18n "pages.inbounds.inboundCount" }}:</strong>
+                                <a-tag color="blue">[[ dbInbounds.length ]]</a-tag>                            
                                  <template>
                                     <div>
                                         <a-back-top :target="() => document.getElementById('content-layout')" visibility-height="200">
