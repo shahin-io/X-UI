@@ -18,6 +18,11 @@
     .ant-card-dark h2 {
         color: hsla(0,0%,100%,.65);
     }
+    
+    .card-title{
+        font-weight: bold;
+        margin-bottom: 5px;
+}
 </style>
 <body>
 <a-layout id="app" v-cloak :class="themeSwitcher.currentTheme">
@@ -147,7 +152,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                          <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.systemLoad" }}</p></div>                           
+                           <a-card class="card-title" title="{{ i18n "pages.index.systemLoad" }}">                         
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 1px;"><b>RAM:</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
