@@ -26,14 +26,14 @@
         <a-layout-content>
             <a-spin :spinning="spinning" :delay="200" :tip="loadingTip"/>
             <transition name="list" appear>
-                <a-alert type="error" v-if="showAlert"
-            style="margin: 8px 4px; font-weight: bold; background-color: red; color: white;"
-            message='{{ i18n "secAlertTitle" }}'
-            description='{{ i18n "secAlertSsl" }}'
-            show-icon closable>
-            <template #icon>
-            <a-icon type="warning" style="color: white;" />
-            </template>
+                <a-alert type="error" v-if="showAlert" 
+                style="margin: 8px 4px; font-weight: bold; background-color: red; color: white;"
+                message='{{ i18n "secAlertTitle" }}'
+                description='{{ i18n "secAlertSsl" }}'
+                show-icon closable>
+                <template #icon>
+                <a-icon type="warning" style="color: white;" />
+              </template>
             </a-alert>
             </transition>
             <transition name="list" appear>
@@ -82,7 +82,6 @@
                     </a-card>
                 </a-row>
             </transition>
-            
             <transition name="list" appear>
                 <a-row>
                     <a-col :sm="24" :md="12">
@@ -110,8 +109,7 @@
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank"><a-tag color="purple"><b>X-UI:</b> {{ .cur_ver }}</a-tag></a>
                             </template>
                         </a-card>
-                    </a-col> 
-                       
+                    </a-col>            
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.xrayStatus" }}</p></div>
@@ -138,8 +136,7 @@
                                 <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">[[ status.xray.version ]]</a-tag>
                             </a-tooltip>                   
                         </a-card>
-                    </a-col>
-                    
+                    </a-col>       
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "menu.link" }}</p></div>
@@ -148,11 +145,9 @@
                             <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
                         </a-card>
                     </a-col>
-                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                          <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.systemLoad" }}</p></div>
-                                           
+                          <div><p style="font-weight: bold; margin-bottom: 5px; text-align: left;">{{ i18n "pages.index.systemLoad" }}</p></div>                           
                             <a-tooltip>
                             <a-tag color="blue" style="margin-right: 1px;"><b>RAM:</b> [[ sizeFormat(status.appStats.mem) ]]</a-tag>
                             </a-tooltip>
@@ -163,51 +158,10 @@
                             <template slot="title">
                               {{ i18n "pages.index.systemLoadDesc" }}
                             </template>
-                              <a-tag color="blue" style="margin-right: 2px;">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
-                            </a-tooltip>
-                            
+                              <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
+                            </a-tooltip>      
                         </a-card>
-                    </a-col>
-                    
-                     <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.inbounds.inboundCount" }}:</strong>
-                                <a-tag color="blue">[[ dbInbounds.length ]]</a-tag>                            
-                                 <template>
-                                    <div>
-                                        <a-back-top :target="() => document.getElementById('content-layout')" visibility-height="200">
-                                        </a-back-top>
-                                <strong>{{ i18n "clients" }}:</strong>
-                                <a-tooltip title="Total Clients">
-                                   <a-tag color="blue">[[ total.clients ]]</a-tag>
-                                 </a-tooltip>
-
-                                <a-popover title='{{ i18n "disabled" }}' :overlay-class-name="themeSwitcher.currentTheme">
-                                    <template slot="content">
-                                        <p v-for="clientEmail in total.deactive">[[ clientEmail ]]</p>
-                                    </template>
-                                    <a-tag v-if="total.deactive.length">[[ total.deactive.length ]]</a-tag>
-                                </a-popover>
-                                <a-popover title='{{ i18n "depleted" }}' :overlay-class-name="themeSwitcher.currentTheme">
-                                    <template slot="content">
-                                        <p v-for="clientEmail in total.depleted">[[ clientEmail ]]</p>
-                                    </template>
-                                    <a-tag color="red" v-if="total.depleted.length">[[ total.depleted.length ]]</a-tag>
-                                </a-popover>
-                                <a-popover title='{{ i18n "depletingSoon" }}' :overlay-class-name="themeSwitcher.currentTheme">
-                                    <template slot="content">
-                                        <p v-for="clientEmail in total.expiring">[[ clientEmail ]]</p>
-                                    </template>
-                                    <a-tag color="orange" v-if="total.expiring.length">[[ total.expiring.length ]]</a-tag>
-                                </a-popover>
-
-                                    <a-tag color="green">[[ onlineClients.length ]]</a-tag>
-
-                                    </div>
-                                </template>
-                       </a-card>
-                    </a-col>
-                         
+                    </a-col>>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -219,7 +173,7 @@
                                         </template>
                                         <strong>TCP:</Strong> [[ status.tcpCount ]]
                                     </a-tooltip>
-                                </a-col>          
+                                </a-col>
                                 <a-col :span="12">
                                     <a-icon type="swap"></a-icon>
                                     <a-tooltip>
@@ -232,7 +186,6 @@
                             </a-row>
                         </a-card>
                     </a-col>
-                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -245,7 +198,6 @@
                                         <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
                                     </a-tooltip>
                                 </a-col>
-                                
                                 <a-col :span="12">
                                     <a-icon type="arrow-down"></a-icon>
                                     <a-tooltip>
@@ -258,7 +210,6 @@
                             </a-row>
                         </a-card>
                     </a-col>
-                    
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <a-row>
@@ -271,7 +222,6 @@
                                         <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
                                     </a-tooltip>
                                 </a-col>
-                                
                                 <a-col :span="12">
                                     <a-icon type="cloud-download"></a-icon>
                                     <a-tooltip>
@@ -557,70 +507,11 @@
             spinning: false,
             loadingTip: '{{ i18n "loading"}}',
             showAlert: false,
-            inbounds: [],
-            dbInbounds: [],
-            clientCount: [],
-            onlineClients: [],
         },
         methods: {
             loading(spinning, tip = '{{ i18n "loading"}}') {
                 this.spinning = spinning;
                 this.loadingTip = tip;
-            },
-            async getDBInbounds() {
-                this.refreshing = true;
-                const msg = await HttpUtil.post('/xui/inbound/list');
-                if (!msg.success) {
-                    this.refreshing = false;
-                    return;
-                }
-                await this.getOnlineUsers();
-                this.setInbounds(msg.obj);
-                setTimeout(() => {
-                    this.refreshing = false;
-                }, 500);
-            },
-            async getOnlineUsers() {
-                const msg = await HttpUtil.post('/xui/inbound/onlines');
-                if (!msg.success) {
-                    return;
-                }
-                this.onlineClients = msg.obj != null ? msg.obj : [];
-            },
-            getClientCounts(dbInbound, inbound) {
-                let clientCount = 0, active = [], deactive = [], depleted = [], expiring = [], online = [];
-                clients = inbound.clients;
-                clientStats = dbInbound.clientStats
-                now = new Date().getTime()
-                if (clients) {
-                    clientCount = clients.length;
-                    if (dbInbound.enable) {
-                        clients.forEach(client => {
-                            client.enable ? active.push(client.email) : deactive.push(client.email);
-                            if(this.isClientOnline(client.email)) online.push(client.email);
-                        });
-                        clientStats.forEach(client => {
-                            if (!client.enable) {
-                                depleted.push(client.email);
-                            } else {
-                                if ((client.expiryTime > 0 && (client.expiryTime - now < this.expireDiff)) ||
-                                    (client.total > 0 && (client.total - (client.up + client.down) < this.trafficDiff))) expiring.push(client.email);
-                            }
-                        });
-                    } else {
-                        clients.forEach(client => {
-                            deactive.push(client.email);
-                        });
-                    }
-                }
-                return {
-                    clients: clientCount,
-                    active: active,
-                    deactive: deactive,
-                    depleted: depleted,
-                    expiring: expiring,
-                    online: online,
-                };
             },
             async getStatus() {
                 const msg = await HttpUtil.post('/server/status');
@@ -734,30 +625,6 @@
                 fileInput.click();
             },
         },
-        computed: {
-    total() {
-        let down = 0, up = 0;
-        let clients = 0, deactive = [], depleted = [], expiring = [];
-        this.dbInbounds.forEach(dbInbound => {
-            down += dbInbound.down;
-            up += dbInbound.up;
-            if (this.clientCount[dbInbound.id]) {
-                clients += this.clientCount[dbInbound.id].clients;
-                deactive = deactive.concat(this.clientCount[dbInbound.id].deactive);
-                depleted = depleted.concat(this.clientCount[dbInbound.id].depleted);
-                expiring = expiring.concat(this.clientCount[dbInbound.id].expiring);
-            }
-        });
-        return {
-            down: down,
-            up: up,
-            clients: clients,
-            deactive: deactive,
-            depleted: depleted,
-            expiring: expiring
-        };
-    }
-},
         async mounted() {
             if (window.location.protocol !== "https:") {
                 this.showAlert = true;
@@ -770,7 +637,6 @@
                 }
                 await PromiseUtil.sleep(2000);
             }
-            this.getDBInbounds();
         },
     });
 
