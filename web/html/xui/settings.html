@@ -44,23 +44,19 @@
         <a-layout-content>
             <a-spin :spinning="spinning" :delay="500" tip='{{ i18n "loading"}}'>
                 <transition name="list" appear>
-                    <a-alert type="error" v-if="showAlert" style="margin-bottom: 10px"
-                    message='{{ i18n "secAlertTitle" }}'
-                    color="red"
-                    description='{{ i18n "secAlertSsl" }}'
-                     show-icon closable
-                     >
-                     </a-alert>
-                     <a-alert type="error" v-if="confAlerts.length>0" style="margin-bottom: 10px"
-                     message='{{ i18n "secAlertTitle" }}'
-                     color="red"
-                     show-icon closable
-                     >
-                     <template slot="description">
-                         {{ i18n "secAlertConf" }}
-                         <li v-for="a in confAlerts">- [[ a ]]</li>
-                     </template>
-                     </a-alert>
+                    <a-alert type="error" v-if="showAlert || confAlerts.length > 0" style="margin-bottom: 10px"
+    color="red" show-icon closable>
+    <template #message>
+        {{ i18n "secAlertTitle" }}
+    </template>
+    <template #description>
+        {{ i18n "secAlertSsl" }}
+        <ul>
+            <li v-for="a in confAlerts">- {{ a }}</li>
+        </ul>
+    </template>
+</a-alert>
+
                 </transition>
                 <a-space direction="vertical">
                     <a-card hoverable style="margin-bottom: .5rem;">
