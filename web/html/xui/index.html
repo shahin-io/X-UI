@@ -190,7 +190,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionTcpCountDesc" }}
                                         </template>
-                                        <strong>TCP:</Strong> [[ status.tcpCount ]]
+                                        <strong>TCP:</Strong> <a-tag>[[ status.tcpCount ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -199,7 +199,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionUdpCountDesc" }}
                                         </template>
-                                        <strong>UDP:</strong> [[ status.udpCount ]]
+                                        <strong>UDP:</strong> <a-tag>[[ status.udpCount ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -214,7 +214,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.upSpeed" }}
                                         </template>
-                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
+                                        <strong>Up:</strong> <a-tag>[[ sizeFormat(status.netIO.up) ]]/s</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -223,7 +223,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
-                                        <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
+                                        <strong>Down:</strong> <a-tag>[[ sizeFormat(status.netIO.down) ]]/s</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -238,7 +238,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalSent" }}
                                         </template>
-                                        <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
+                                        <strong>Out:</strong> <a-tag>[[ sizeFormat(status.netTraffic.sent) ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -247,7 +247,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.totalReceive" }}
                                         </template>
-                                       <strong>In:</strong> [[ sizeFormat(status.netTraffic.recv) ]]
+                                       <strong>In:</strong> <a-tag>[[ sizeFormat(status.netTraffic.recv) ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
