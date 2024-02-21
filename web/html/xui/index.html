@@ -86,10 +86,10 @@
                         <a-card hoverable>
                             <strong>{{ i18n "pages.inbounds.stream.tcp.version" }}:</strong>
                             <a href="https://github.com/alireza0/x-ui/releases" target="_blank">
-                                <a-tag color="purple" style="cursor: pointer;">X-UI {{ .cur_ver }}</a-tag>
+                                <a-tag color="purple" style="cursor: pointer; margin-right: 3px;"><b>X-UI</b> {{ .cur_ver }}</a-tag>
                             </a>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">Xray [[ status.xray.version ]]</a-tag>
+                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion"><b>Xray</b> [[ status.xray.version ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -100,13 +100,13 @@
                                  <template slot="title">
                                      {{ i18n "pages.index.xrayoperationHoursDesc" }}
                                  </template>
-                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
+                                <a-tag :color="status.xray.color" style="margin-right: 3px;"><b>Xray</b> [[ formatSecond(status.appStats.uptime) ]]</a-tag>
                             </a-tooltip>      
                             <a-tooltip>
                                 <template slot="title">
                                     {{ i18n "pages.index.operationHoursDesc" }}
                                 </template>
-                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
+                                 <a-tag color="blue"><b>OS</b> [[ formatSecond(status.uptime) ]]</a-tag>
                             </a-tooltip>
                         </a-card>
                     </a-col>
@@ -190,7 +190,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionTcpCountDesc" }}
                                         </template>
-                                        <strong>TCP:</Strong> <a-tag>[[ status.tcpCount ]]</a-tag>
+                                        <strong>TCP:</Strong> [[ status.tcpCount ]]
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
@@ -199,7 +199,7 @@
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionUdpCountDesc" }}
                                         </template>
-                                        <strong>UDP:</strong> <a-tag>[[ status.udpCount ]]</a-tag>
+                                        <strong>UDP:</strong> [[ status.udpCount ]]
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
