@@ -185,21 +185,23 @@
                         <a-card hoverable>
                             <a-row>
                                 <a-col :span="12">
-                                    <a-icon type="swap"></a-icon>    
+                                    <a-icon type="swap"></a-icon>
+                                    <strong>TCP:</Strong>    
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionTcpCountDesc" }}
                                         </template>
-                                        <strong>TCP:</Strong> <a-tag>[[ status.tcpCount ]]</a-tag>
+                                        <a-tag>[[ status.tcpCount ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
                                     <a-icon type="swap"></a-icon>
+                                    <strong>UDP:</strong>
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.connectionUdpCountDesc" }}
                                         </template>
-                                        <strong>UDP:</strong> <a-tag>[[ status.udpCount ]]</a-tag>
+                                        <a-tag>[[ status.udpCount ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -210,20 +212,22 @@
                             <a-row>
                                 <a-col :span="12">
                                     <a-icon type="arrow-up"></a-icon>
+                                    <strong>Up:</strong>
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.upSpeed" }}
                                         </template>
-                                        <strong>Up:</strong> <a-tag>[[ sizeFormat(status.netIO.up) ]]/s</a-tag>
+                                        <a-tag>[[ sizeFormat(status.netIO.up) ]]/s</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
                                     <a-icon type="arrow-down"></a-icon>
+                                    <strong>Down:</strong>
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.downSpeed" }}
                                         </template>
-                                        <strong>Down:</strong> <a-tag>[[ sizeFormat(status.netIO.down) ]]/s</a-tag>
+                                        <a-tag>[[ sizeFormat(status.netIO.down) ]]/s</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
@@ -234,20 +238,22 @@
                             <a-row>
                                 <a-col :span="12">
                                     <a-icon type="cloud-upload"></a-icon>
+                                    <strong>Out:</strong>
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.totalSent" }}
                                         </template>
-                                        <strong>Out:</strong> <a-tag>[[ sizeFormat(status.netTraffic.sent) ]]</a-tag>
+                                        <a-tag>[[ sizeFormat(status.netTraffic.sent) ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                                 <a-col :span="12">
                                     <a-icon type="cloud-download"></a-icon>
+                                    <strong>In:</strong>
                                     <a-tooltip>
                                         <template slot="title">
                                             {{ i18n "pages.index.totalReceive" }}
                                         </template>
-                                       <strong>In:</strong> <a-tag>[[ sizeFormat(status.netTraffic.recv) ]]</a-tag>
+                                      <a-tag>[[ sizeFormat(status.netTraffic.recv) ]]</a-tag>
                                     </a-tooltip>
                                 </a-col>
                             </a-row>
