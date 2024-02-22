@@ -51,7 +51,10 @@
 >
     <template slot="description">
         {{ i18n "secAlertSsl" }} <!-- Include SSL alert description -->
-        <li v-for="a in confAlerts" v-if="confAlerts.length > 0">- [[ a ]]</li> <!-- Add conditional rendering for confAlerts -->
+       <template v-if="confAlerts.length > 0">
+            {{ i18n('secAlertConf') }}
+         <li v-for="a in confAlerts" v-if="confAlerts.length > 0">- [[ a ]]</li> <!-- Add conditional rendering for confAlerts -->
+    </template>
     </template>
 </a-alert>
                 </transition>
